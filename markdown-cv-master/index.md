@@ -2,8 +2,8 @@
 layout: cv
 title: David Bermúdez CV
 ---
-# David Bermúdez
-Eterno aprendiz
+#
+_Eterno aprendiz_
 
 <div id="webaddress">
 <a href="mailto:davidbermudez@jerez.es">email</a>
@@ -30,12 +30,33 @@ __IES Caballero Bonald, Jerez de la Frontera__
 
 ## Ocupación
 
-__Funcionario Ministerio del Interior__, destinos en:
-- Bornos `1992-1994`
-- Jerez de la Frontera `1994-1997`
-- La Barca de la Florida `1997-2000`
-- Cádiz `2000-2007`
-- Arcos de la Frontera `2007-Actualidad`
+`1990-2020`
+__Funcionario Ministerio del Interior__,
+
+### Destinos
+
+`1992-1994`
+Bornos
+
+###
+
+`1994-1997`
+Jerez de la Frontera
+
+###
+
+`1997-2000`
+La Barca de la Florida
+
+###
+
+`2000-2007`
+Cádiz
+
+###
+
+`2007-Actualidad`
+Arcos de la Frontera
 
 <!-- ### Footer
 
