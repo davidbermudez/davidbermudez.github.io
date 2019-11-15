@@ -1,2 +1,3 @@
 # davidbermudez.github.io
-Pendiente
+
+[Currículum](https://davidbermudez.github.io/markdown-cv-master/index.md)
