@@ -1,4 +1,3 @@
----
 # David Bermúdez CV
 ---
 
