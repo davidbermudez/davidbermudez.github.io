@@ -1,9 +1,6 @@
 ---
-layout: cv
-title: David Bermúdez CV
+# David Bermúdez CV
 ---
-#
-_Eterno aprendiz_
 
 <div id="webaddress">
 <a href="mailto:davidbermudez@jerez.es">email</a>
