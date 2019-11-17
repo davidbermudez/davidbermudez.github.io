@@ -1,17 +1,1 @@
-# Tutorial VSCodium
-
-## Introducción
-
-**VSCodium** es la versión *Open Source* del editos propiedad de Microsoft **VS Code**.
-
-Microsoft distribuye su VS Code de manera libre y gratuita, pero su versión compilada contiene partes de código que no gustan a la comunidad de desarrolladores debido a su opacidad y cesión obligatoria de derechos de inspección a la que obliga la compañía.
-
-VS Codium es la versión funcional de VS Code y que garantiza que su código, disponible públicamente, está libre de obligaciones contractuales con Microsoft
-
-## Descarga
-
-En [GitHub.com](https://github.com/VSCodium/vscodium) encontramos el repositorio oficial de **VSCodium**. En el README.md tienes el enlace a la versión que necesite, disponible para todos los sistemas operativos
-
-## Instalación
-
-
+# Tutorial VSCodium## Introducción**VSCodium** es la versión *Open Source* del editos propiedad de Microsoft **VS Code**.Microsoft distribuye su VS Code de manera libre y gratuita, pero su versión compilada contiene partes de código que no gustan a la comunidad de desarrolladores debido a su opacidad y cesión obligatoria de derechos de inspección a la que obliga la compañía.VS Codium es la versión funcional de VS Code y que garantiza que su código, disponible públicamente, está libre de obligaciones contractuales con Microsoft## DescargaEn [GitHub.com](https://github.com/VSCodium/vscodium) encontramos el repositorio oficial de **VSCodium**. En el README.md hay un enlace a la versión que necesites, disponibles para todos los sistemas operativos.## ComenzandoTras instalar y ejecutar la aplicación, **VSCodium** nos muestra una ventana de *Bienvenida* que contiene entre otras cosas, una utilidad para aprender rápidamente el funcionamiento de este editor con un recorrido por las funciones esenciales### Interactive PlaygroundEste apartado te permite experimentar con fragmentos de código las funciones y características habituales en el editor. Entre otras cosas:- Multi-cursor Editing- IntelliSense- Line Actions- Rename Refactoring- Formatting- Code Folding- Errors and Warnings- Snippets- Emmet- JavaScript Type Checking#### Multi-cursor EditingEs posible crear desde el teclado múltiples cursores hacia arriba o abajo del punto de inserción para añadir código en varias líneas a la vez.Para ello pulsa `Ctrl+Alt+UpArrow` o `Ctrl+Alt+DownArrow` para añadir cursores arriba o abajo respectivamente desde la posición actual del cursor#### IntelliSenseCon esta funcionalidad se obtiene asistencia de código y/o sugerencias sobre los parámetros para los lenguajes de programación más conocidos#### Line ActionsCon las *Line Actions* es posible realizar inserciones rápidas de código utilizando combinaciones de teclas. Por ejemplo, es posible mover una línea hacia arriba o abajo, seleccionadola y pulsando `Alt+UpArrow` o `Alt+DownArrow`#### Rename Refactoring
