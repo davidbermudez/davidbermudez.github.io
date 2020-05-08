@@ -13,17 +13,18 @@ String s1 = "Hola";
 String s2 = "Adios";
 
 s1.equals(s2); // Comparar cadenas 
-s1.compareTo(s2); // Compara dos cadenas alfabéticamente, e indica cual es mayor o menor: <0 la primera es mas pequeña, 0 es igual, >0 la primera es mayor 
-s1.contains(s2); // Nos dice si la cadena contiene otra cadena 
-s1.indexOf(char); // Nos dice la posición del carácter char 
-s1.indexOf(char, pos); // Nos dice la posición de un carácter a partir de la posición pos 
-s1.lastIndexOf(char); // idem pero desde el final 
+s1.compareTo(s2);	// Compara dos cadenas alfabéticamente, e indica cual es mayor o menor: 
+					// Devuelve: < 0 sí 's1' es mas pequeña, 0 sí 's1' y 's2' son iguales, > 0 sí la primera es mayor 
+s1.contains(s2); 	// Nos dice si la cadena contiene otra cadena 
+s1.indexOf(char); 	// Nos dice la posición dentro de 's1' del carácter char
+s1.indexOf(char, pos);	// Nos dice la posición de un carácter a partir de la posición pos 
+s1.lastIndexOf(char);	// idem pero desde el final 
 s1.isEmpty(); // Para ver si está vacía. Similar a s1.equals("") 
-s1.startWith(s2); // Para ver si una cadena empieza con algo 
-s1.endWith(s2); // Para ver si una cadena acaba con algo 
-s1.toUpperCase(); // Convertir a mayúsculas 
-s1.toLowerCase(); // Convertir a minúsculas 
-s1.replace(“   “,” “); // Cambiar doble espacio por espacio simple en la cadena s1 
+s1.startWith(s2); 	// Para ver si una cadena empieza con algo 
+s1.endWith(s2); 	// Para ver si una cadena acaba con algo 
+s1.toUpperCase(); 	// Convertir a mayúsculas 
+s1.toLowerCase(); 	// Convertir a minúsculas 
+s1.replace("  ", " "); // Cambiar doble espacio por espacio simple en la cadena s1 
 s1.trim(); // Elimina espacios antes y después 
 char[] array = s1.toCharArray(); // Convierte un String en un Array
 s1 = new String(array); // Convierte un Array en una cadena 
