@@ -8,7 +8,7 @@ Resumen para tener siempre a mano:
 
 En Java se utilizan dos tipos de datos para manejar cadenas de texto: *String* y *Char*
 
-~~~
+~~~java
 String s1 = "Hola";
 String s2 = "Adios";
 
@@ -36,7 +36,7 @@ String s1 = String.join (“ “, cadena); // pega en una cadena un array de Str
 
 Funciones de Character
 
-~~~
+~~~java
 char c1 = 'A':
 
 Character.isLetter(c1); 	// Comprobar que sea una letra 
@@ -48,7 +48,7 @@ Character.isLowerCase(c1);	// Comprobar si es minúsculas
 ### Arrays
 
 Funciones de arrays
-~~~
+~~~java
 // Ordenar un array (QuickSort)
 Arrays.sort(array);
 // Copiar un array
@@ -63,7 +63,7 @@ array2 = Arrays.copyOfRange(array1, 5, 10);
 Funciones de utilidad **ARRAYS**
 
 Rellena un array con valores enteros aleatorios dado un máximo y mínimo.
-~~~
+~~~java
 public static void rellenaAleatorioMaxMinInt(int[] a, int min, int max) {
 	Random r = new Random();
     for (int i = 0; i < a.length; i++) {
@@ -74,7 +74,7 @@ public static void rellenaAleatorioMaxMinInt(int[] a, int min, int max) {
 
 
 Devuelve un array igual al enviado quitando el elemento indicado por 'pos'
-~~~
+~~~java
 public static int[] borraDeArray(int[] a, int pos) {
 	int[] b;
     b = new int[a.length - 1];
@@ -90,7 +90,7 @@ public static int[] borraDeArray(int[] a, int pos) {
 ~~~
 
 Función que comprueba si un elemento está en el array (sin convertir en 'lista')
-~~~
+~~~java
 public static boolean contiene(int[] a, int b) {
     for (int i = 0; i < a.length; i++) {
         if (a[i] == b) {
@@ -103,7 +103,7 @@ public static boolean contiene(int[] a, int b) {
 ~~~
 
 Utilizando las dos funciones anteriores, devuelve un array al que le hemos eliminado **el** primer elemento 'b' que encuentra, en el caso de que exista.
-~~~
+~~~java
 public static int[] elimina1ElementoArray(int[] a, int b) {
     int[] c;
 	if (!contiene(a, b))
@@ -128,7 +128,7 @@ public static int[] elimina1ElementoArray(int[] a, int b) {
 ~~~
 
 Devuelve un array tras eliminar **todos** los elementos 'b' que haya en el array pasado
-~~~
+~~~java
 public static int[] eliminaElementosArray(int[] a, int b)
 {
 	int[] d;
@@ -143,7 +143,7 @@ public static int[] eliminaElementosArray(int[] a, int b)
 ~~~
 
 Devuelve el elemento mayor de un array
-~~~
+~~~java
 public static int maxArray(int[] a) {
 	int max = a[0];
     for (int i = 1; i < a.length; i++) {
@@ -156,7 +156,7 @@ public static int maxArray(int[] a) {
 ~~~
 
 Devuelve el elemento menor de un array
-~~~
+~~~java
 public static int minArray(int[] a) {
     int min = a[0];
 	for (int i = 1; i < a.length; i++) {
@@ -169,7 +169,7 @@ public static int minArray(int[] a) {
 ~~~
 
 Presenta por pantalla un array
-~~~
+~~~java
 private static void imprimeArray(int[] a)
 {
     System.out.print("[");
@@ -181,7 +181,7 @@ private static void imprimeArray(int[] a)
 ~~~
 
 Presenta por pantalla un array bidimensional de manera tabulada
-~~~
+~~~java
 public static void escribeArrayBi(int[][] array)
 {
 	int i, j;
@@ -242,7 +242,7 @@ Características de los ArrayList
 
 Los Maps es una estructura de datos que nos permiten almacenarlos como un par de valores asociados clave=>valor. También son conocidos como Diccionarios.
 
-~~~
+~~~java
 // declaración del Map
 Map<Integer, Integer> nameMap = new HashMap<Integer, Integer>();
 
@@ -259,7 +259,7 @@ nameMap.values(); 	// Devuelve un array con todos los valores de nameMap
 ~~~
 
 Esta función recibe una cadena (String) y crea un array asociativo con elementos formado por palabras y asociado al número de veces que esa palabra se encuentra en el texto
-~~~
+~~~java
 public static void leerCadena(String cadena)
 {
     Map<String, Integer> palabras = new HashMap<>();
@@ -292,7 +292,7 @@ En la práctica, existen dos tipos de archivo:
 
 En todos los casos debemos importar la librería java.io.*
 
-~~~
+~~~java
 import java.io.*;
 ~~~
 
@@ -311,7 +311,7 @@ Vemos todas ellas en el siguiente bloque de código:
 
 **Leer Fichero de Texto**
 
-~~~
+~~~java
 private static void leeFicheroTexto(String filename)
     {
         String texto;
@@ -340,7 +340,7 @@ private static void leeFicheroTexto(String filename)
 
 **Escribir Fichero de Texto**
     
-~~~
+~~~java
 
     private static void escribeFicheroTexto(String filename)
     {
@@ -378,7 +378,7 @@ Su contenido lo forman *unos y ceros* y sólo puede abrirse por la aplicación q
 
 Si no conocemos la estructura del archivo podemos leer uno a uno todos sus bytes con la siguiente función:
 
-~~~
+~~~java
 private static void leeFicheroBinario(String filename)
     {
         String texto;
@@ -414,7 +414,7 @@ private static void leeFicheroBinario(String filename)
 
 El siguiente código escribe en un fichero los números enteros del 1 al 100
 
-~~~
+~~~java
 private static void escribeFicheroBinario(String filename)
     {
         try {
@@ -438,7 +438,7 @@ private static void escribeFicheroBinario(String filename)
 
 Para leer un archivo alojado en internet:
 
-~~~
+~~~java
 public static void main(String[] args) throws MalformedURLException {
 
         URL url = new URL("http://www.lineadecodigo.com");
