@@ -4,7 +4,45 @@ Resumen para tener siempre a mano:
 
 ## Tipos de Datos
 
+- Homogéneas / Heterogéneas
+
+Según permita guardar datos del mismo tipo o de distintos tipos
+
+- Estáticas / Dinámicas
+
+Según el número de elementos sea fijo o variable
+
+- Lineales / No lineales
+
+Según guarden una ristra de datos, o en cambio pueden ser guardadas en otro tipo de estructuras. En este curso solo veremos las lineales
+
+### Integer
+
+Tipo de datos  **homogéneos**, **estáticos** y **lineáles**
+
+Representan números enteros con signo, con valores permitidos desde -2147483648 hasta el 2147483647
+
+Algunas funciones útiles
+
+~~~java
+public static boolean primo(int a)
+{
+    int i;
+    boolean devuelve;
+    devuelve = true;
+    for(i = a - 1; i > 1; i--)
+    {
+        if(a % i == 0){
+            devuelve = false;
+        }
+    }
+    return devuelve;
+}
+~~~
+
 ### String
+
+Son tipos de datos **Homogéneos**, **estáticos** y **lineales**.
 
 En Java se utilizan dos tipos de datos para manejar cadenas de texto: *String* y *Char*
 
@@ -63,10 +101,196 @@ s1.substring(inicio);
 s1 = "hola que tal";
 String[] cadena = s1.split(" "); //cadena[2] => "tal"
 // pega en una cadena un array de String, separándolas con –en este caso- con un espacio 
-String s1 = String.join (“ “, cadena);
+String s1 = String.join (" ", cadena);
+~~~
+
+Algunas funciones útiles 
+
+~~~java
+public static String quitaAcentos(String a) {
+    String acentos = "áÁéÉíÍóÓúÚüÜ";
+    String normal = "aAeEiIoOuUuU";
+    for (int i = 0; i < acentos.length(); i++) {
+        a = a.replace(acentos.charAt(i), normal.charAt(i));        
+    }
+    return a;
+}
+~~~
+
+~~~java
+public static boolean compruebaEmail(String a){
+    if(a.matches("^[^@]+@[^@]+\\.[a-zA-Z]{2,}$")){
+        return true;
+    } else return false;
+}
+~~~
+
+Funciones con fechas y horas
+
+~~~java
+public static int diasMes(int mes){
+    int devuelve;
+    switch (mes)
+    {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            devuelve = 31;
+            break;
+        case 2:
+            devuelve = 28;
+            break;
+        case 4: case 6: case 9: case 11:
+            devuelve = 30;
+            break;
+        default:
+            devuelve = 0;
+            break;
+    }
+    return devuelve;
+}
+
+public static int diasMes2(int mes, int anno){
+    if (bisiesto(anno))
+    {
+        return 29;
+    }
+    else
+    {
+        return diasMes(mes);
+    }
+}
+
+public static boolean bisiesto(int anno){
+    // Año bisiesto es el divisible entre 4,
+    // salvo que sea año secular -último de cada siglo,
+    // terminado en «00»-, en cuyo caso también
+    // ha de ser divisible entre 400.
+    boolean devuelve = false;
+    if(anno % 4 == 0)
+    {
+        // año secular
+        if(anno % 100 == 0)
+        {
+            // divisible entre 400
+            if(anno % 400 == 0)
+            {
+                devuelve = true;
+            }
+        }
+        else
+        {
+            devuelve = true;
+        }
+    }
+    return devuelve;
+}
+
+public static int diasTranscurridos(int dia, int mes, int anno){
+    // desde el 01/01 del año actual
+    int dias = 0, i;
+    for(i = 1; i < mes; i++)
+    {
+        dias = dias + diasMes2(i, anno);
+    }
+    dias = dias + dia;
+    return dias;
+}
+
+public static int diasTranscurridos1980(int dia, int mes, int anno)
+{
+    // desde el 01/01 del año 1980
+    int dias = 0, i, j;
+    for (j = 1980; j < anno; j++)
+    {
+        if(bisiesto(j))
+        {
+            dias = dias + 366;
+        }
+        else
+        {
+            dias = dias + 365;
+        }
+    }
+    // ultimo año
+    dias = dias + diasTranscurridos(dia, mes, anno);
+    return dias;
+}
+
+public static int diasEntreFechas(int d1, int m1, int a1, int d2, int m2, int a2)
+{
+    int diasTotal1, diasTotal2, diferencia;
+    diasTotal1 = diasTranscurridos1980(d1, m1, a1);
+    diasTotal2 = diasTranscurridos1980(d2, m2, a2);
+    diferencia = diasTotal2 - diasTotal1;
+    return diferencia;
+}
+
+public static int diaSemanaFecha(int d, int m, int a)
+{
+    int def = diasTranscurridos1980(d,m,a);
+    return (def % 7) + 1;
+}
+
+public static int horaASegundos(int h, int m, int s)
+{
+    return h * 3600 + m * 60 + s;
+}
+
+public static String escribeHoraBonita(int h, int m, int s)
+{
+    // valores permitidos
+    // esta función admite cualquier valor en minutos y segundos
+        
+    if (s > 59){
+        // el exceso se lo añadimos a los minutos
+        m = m + (s / 60);
+        s = (s % 60);
+    }
+    if (m > 59){
+        // el exceso se lo añadimos a las horas
+        h = h + (m / 60);
+        m = (m % 60);
+    }
+    String hora = "";
+    if (h < 10)
+    {
+        hora = "0";
+    }
+    hora = hora + h + ":";
+    if (m < 10)
+    {
+        hora = hora + "0";
+    }
+    hora = hora + m + ":";
+    if (s < 10)
+    {
+        hora = hora + "0";
+    }
+    hora = hora + s;
+    return hora;
+}
+
+public static String escribeSegundosBonito(int s)
+{
+    return escribeHoraBonita(0,0, s);
+}
+
+public static int segundosTranscurridos(int h1, int m1, int s1, int h2, int m2, int s2)
+{
+    return (h2 - h1) * 3600 + (m2 - m1) * 60 + (s2 - s1);
+}
+
+public static int segundosTranscurridos1980(int d, int m, int a, int h, int M, int s)
+{
+    int x = diasTranscurridos1980(d, m, a);
+    x = x * 24 * 3600 - 86400;  // restamos los segundos existentes en las últimas 24 horas
+    x = x + segundosTranscurridos(0, 0, 0, h, M, s);
+    return x;
+}
 ~~~
 
 ### Arrays
+
+Son tipos de datos **Homogéneos**, **estáticos** y **lineales**.
 
 Funciones de arrays
 ~~~java
@@ -83,9 +307,10 @@ array2 = Arrays.copyOfRange(array1, 5, 10);
 
 Funciones de utilidad **ARRAYS**
 
-Rellena un array con valores enteros aleatorios dado un máximo y mínimo.
+
 ~~~java
 public static void rellenaAleatorioMaxMinInt(int[] a, int min, int max) {
+    // Completa un array con valores enteros aleatorios dado un máximo y mínimo.
 	Random r = new Random();
     for (int i = 0; i < a.length; i++) {
         a[i] = r.nextInt(max - min + 1) + min;
@@ -94,9 +319,9 @@ public static void rellenaAleatorioMaxMinInt(int[] a, int min, int max) {
 ~~~
 
 
-Devuelve un array igual al enviado quitando el elemento indicado por 'pos'
 ~~~java
 public static int[] borraDeArray(int[] a, int pos) {
+    // Devuelve un array igual al enviado quitando el elemento indicado por 'pos'
 	int[] b;
     b = new int[a.length - 1];
 	for (int i = 0; i < a.length - 1; i++) {
@@ -110,9 +335,10 @@ public static int[] borraDeArray(int[] a, int pos) {
 }
 ~~~
 
-Función que comprueba si un elemento está en el array (sin convertir en 'lista')
+
 ~~~java
 public static boolean contiene(int[] a, int b) {
+    // Función que comprueba si un elemento está en el array (sin convertir en 'lista')
     for (int i = 0; i < a.length; i++) {
         if (a[i] == b) {
             devuelve = true;
@@ -123,9 +349,11 @@ public static boolean contiene(int[] a, int b) {
 }
 ~~~
 
-Utilizando las dos funciones anteriores, devuelve un array al que le hemos eliminado **el** primer elemento 'b' que encuentra, en el caso de que exista.
+
 ~~~java
 public static int[] elimina1ElementoArray(int[] a, int b) {
+    // Utilizando las dos funciones anteriores, devuelve un array al que le hemos eliminado 
+    // el primer elemento 'b' que encuentra, en el caso de que exista.
     int[] c;
 	if (!contiene(a, b))
     {
@@ -148,10 +376,10 @@ public static int[] elimina1ElementoArray(int[] a, int b) {
 }
 ~~~
 
-Devuelve un array tras eliminar **todos** los elementos 'b' que haya en el array pasado
+
 ~~~java
-public static int[] eliminaElementosArray(int[] a, int b)
-{
+public static int[] eliminaElementosArray(int[] a, int b){
+    // Devuelve un array tras eliminar todos los elementos 'b' que haya en el array pasado
 	int[] d;
     d = a;
     for (int i = 0; i < a.length; i++) {
@@ -163,9 +391,9 @@ public static int[] eliminaElementosArray(int[] a, int b)
 }
 ~~~
 
-Devuelve el elemento mayor de un array
 ~~~java
 public static int maxArray(int[] a) {
+    // Devuelve el elemento mayor de un array
 	int max = a[0];
     for (int i = 1; i < a.length; i++) {
         if (a[i] > max) {
@@ -176,9 +404,10 @@ public static int maxArray(int[] a) {
 }
 ~~~
 
-Devuelve el elemento menor de un array
+
 ~~~java
 public static int minArray(int[] a) {
+    // Devuelve el elemento menor de un array
     int min = a[0];
 	for (int i = 1; i < a.length; i++) {
     	if (a[i] < min) {
@@ -189,10 +418,11 @@ public static int minArray(int[] a) {
 }
 ~~~
 
-Presenta por pantalla un array
+
 ~~~java
 private static void imprimeArray(int[] a)
 {
+    // Presenta por pantalla un array
     System.out.print("[");
 	for (int i = 0; i < a.length - 1; i++) {
     	System.out.print(a[i] + ", ");
@@ -201,10 +431,153 @@ private static void imprimeArray(int[] a)
 }
 ~~~
 
-Presenta por pantalla un array bidimensional de manera tabulada
+
+### ArraysList :: Listas
+
+Tipos de datos **Homogéneos**, **dinámicos**, **lineales**
+
+> List es una implementacion de la clase ArrayList
+
+Características de los ArrayList
+
+- Un ArrayList tiene un tamaño dinámico, mientras que el de un Array es definido en su creación.
+- Un ArrayList no puede contener datos primitivos, sólo Objetos.
+- El ArrayList permite comprobar que los datos que se añaden a la colección son del tipo correcto en tiempo de compilación.
+- El Array puede ser de varias dimensiones, el ArrayList es unidimensional (aunque pueda ser un ArrayList de ArrayLists).
+
+~~~java
+// Tipos de listas
+List<Integer> li;
+List<Double> ld;
+List<Character> lc;
+List<Boolean> lb;
+List<String> ls;
+
+// Creamos la lista
+li = new ArrayList<>(); // más rápida para recorrer la lista (con un for)
+li = new LinkedList<>(); // más rápida para añadir o insertar elementos
+List<Integer> l2 = new LinkedList<>(Arrays.asList(1, 2, 3, 4));
+
+// Añadir elementos a una lista (al final)
+li.add(115);
+// Añadir elemento en la posición pos
+li.add(pos, 115)
+// Modificar un elemento (en la posición pos)
+li.set(pos, 116)
+// Acceder a un elemento
+li.get(pos)
+// Acceder a su posicion
+li.indexOf(elemento)
+// Tamaño de la lista
+li.size();
+// Borrar por posición
+li.remove(pos)
+// Borrar por elemento
+Integer ele = 5;
+li.remove(ele);
+// CONTAINS
+li.contains(); // igual que el de cadenas
+// INDEXOF
+li.indexOf(5); // igual que el de cadenas
+// SUBLIST
+li.subList(3, 6); // como SubString
+// Añade la lista l3 a la lista l2
+l2.addAll(l3);
+// Añade el array arr a la lista l2
+l2.addAll(Array.asList(arr));
+// Convertir una lista en un array
+Integer[] ai2 = (Integer[])li.toArray();
+// CLEAR
+li.clear();
+// RESTO DE FUNCIONES CHULAS ESTÁN EN COLLECTIONS
+System.out.println("min = " + Collections.min(l2));
+System.out.println("max = " + Collections.max(l2));
+// poner la lista al revés
+Collections.reverse(l2);
+// ordenar la lista
+Collections.sort(l2);
+// desordenar la lista
+Collections.shuffle(l2);
+
+~~~
+
+~~~java
+private static List<String> ordenaLista(List<String> lista)
+{
+    Collections.sort(lista);
+    return lista;
+}
+~~~
+
+### Arrays Asociativos :: Maps
+
+Los Maps es una estructura de datos que nos permiten almacenarlos como un par de valores asociados clave=>valor. También son conocidos como Diccionarios.
+
+~~~java
+// declaración del Map
+Map<Integer, Integer> nameMap = new HashMap<Integer, Integer>();
+
+// Principales funciones
+// Añadir un elemento
+nameMap.put(key, value);
+// Devuelve el valor de la clave 'key'. Null si la 'key' no existe
+nameMap.get(key);
+// Devuelve el numero de elementos del Map
+nameMap.size();
+// Devuelve true si no hay elementos en el Map y false si si los hay
+nameMap.isEmpty();
+// Elimina todos los componentes del Map
+nameMap.clear();
+// Elimina el elemento con la clave 'key'
+nameMap.remove(key);
+// True si en nameMap hay una clave con el nombre 'key'
+nameMap.containsKey(key);
+// True si en nameMap hay un valor que coincide con 'value'
+nameMap.containsValue(value);
+// Devuelve un array con todos los valores de nameMap
+nameMap.values();
+~~~
+
+
+~~~java
+public static void leerCadena(String cadena)
+{
+    // Esta función recibe una cadena (String) y crea un array asociativo
+    // con elementos formado por palabras y asociado al número de veces que 
+    // esa palabra se encuentra en el texto
+
+    Map<String, Integer> palabras = new HashMap<>();
+
+	String[] arrayTexto = cadena.split(" ");
+	for (int i = 0; i < arrayTexto.length; i++) {
+    	if(cadena.contains(arrayTexto[i])){
+        	if(palabras.containsKey(arrayTexto[i]))
+            {
+                palabras.put(arrayTexto[i], palabras.get(arrayTexto[i]) + 1);
+			}
+            else
+			{
+            	palabras.put(arrayTexto[i], 1);
+			}
+		}
+	}
+
+    for (Map.Entry<String, Integer> entry : palabras.entrySet()) {
+        System.out.println(entry.getKey() + " -> " + entry.getValue());
+	}
+}
+~~~
+
+
+
+### Arrays multidimensionales
+
+Homogéneas, estáticas, no lineales
+
 ~~~java
 public static void escribeArrayBi(int[][] array)
 {
+    // Presenta por pantalla un array bidimensional de manera tabulada
 	int i, j;
     int numFilas = array.length;
 	int numCols = array[0].length;
@@ -248,71 +621,25 @@ public static void escribeArrayBi(int[][] array)
 }
 ~~~
 
-### ArraysList :: Listas
+### Clases, Structs (En Java no existen)
 
-> List es una implementacion de la clase ArrayList
+Tipos de datos **Heterogéneas**, **estáticas**, **lineales**
 
-Características de los ArrayList
+### Árboles, grafos
 
-- Un ArrayList tiene un tamaño dinámico, mientras que el de un Array es definido en su creación.
-- Un ArrayList no puede contener datos primitivos, sólo Objetos.
-- El ArrayList permite comprobar que los datos que se añaden a la colección son del tipo correcto en tiempo de compilación.
-- El Array puede ser de varias dimensiones, el ArrayList es unidimensional (aunque pueda ser un ArrayList de ArrayLists).
-
-### Arrays Asociativos :: Maps
-
-Los Maps es una estructura de datos que nos permiten almacenarlos como un par de valores asociados clave=>valor. También son conocidos como Diccionarios.
+Tipos de datos **Homogéneos**, **Dinámicos**, **no lineales**
 
 ~~~java
-// declaración del Map
-Map<Integer, Integer> nameMap = new HashMap<Integer, Integer>();
+// Pilas y Colas
+Stack<Integer> pila = new Stack<>();
+pila.push(10);
+pila.push(11);
+pila.push(12);
+System.out.println(pila.pop());
 
-// Principales funciones
-// Añadir un elemento
-nameMap.put(key, value);
-// Devuelve el valor de la clave 'key'. Null si la 'key' no existe
-nameMap.get(key);
-// Devuelve el numero de elementos del Map
-nameMap.size();
-// Devuelve true si no hay elementos en el Map y false si si los hay
-nameMap.isEmpty();
-// Elimina todos los componentes del Map
-nameMap.clear();
-// Elimina el elemento con la clave 'key'
-nameMap.remove(key);
-// True si en nameMap hay una clave con el nombre 'key'
-nameMap.containsKey(key);
-// True si en nameMap hay un valor que coincide con 'value'
-nameMap.containsValue(value);
-// Devuelve un array con todos los valores de nameMap
-nameMap.values();
+Queue<Integer> cola = new LinkedList<>();
 ~~~
 
-Esta función recibe una cadena (String) y crea un array asociativo con elementos formado por palabras y asociado al número de veces que esa palabra se encuentra en el texto
-~~~java
-public static void leerCadena(String cadena)
-{
-    Map<String, Integer> palabras = new HashMap<>();
-
-	String[] arrayTexto = cadena.split(" ");
-	for (int i = 0; i < arrayTexto.length; i++) {
-    	if(cadena.contains(arrayTexto[i])){
-        	if(palabras.containsKey(arrayTexto[i]))
-            {
-                palabras.put(arrayTexto[i], palabras.get(arrayTexto[i]) + 1);
-			}
-            else
-			{
-            	palabras.put(arrayTexto[i], 1);
-			}
-		}
-	}
-
-    for (Map.Entry<String, Integer> entry : palabras.entrySet()) {
-        System.out.println(entry.getKey() + " -> " + entry.getValue());
-	}
-}
-~~~
 ## Archivos
 
 En la práctica, existen dos tipos de archivo:
@@ -470,18 +797,16 @@ Para leer un archivo alojado en internet:
 
 ~~~java
 public static void main(String[] args) throws MalformedURLException {
-
-        URL url = new URL("http://www.lineadecodigo.com");
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-            System.out.println(in.toString());
-            String inputLine, inputText = "";
-            while ((inputLine = in.readLine()) != null) {
-                inputText = inputText + inputLine;
-                System.out.println(inputLine);
-            }
-            // inputText tiene el contenido completo de la página
-        } catch(Throwable t){}
-
-    }
+    URL url = new URL("https://davidbermudez.github.io");
+    try {
+        BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+        System.out.println(in.toString());
+        String inputLine, inputText = "";
+        while ((inputLine = in.readLine()) != null) {
+            inputText = inputText + inputLine;
+            System.out.println(inputLine);
+        }
+        // inputText tiene el contenido completo de la página
+    } catch(Throwable t){}
+}
 ~~~
