@@ -8,33 +8,7 @@ Resumen para tener siempre a mano:
 
 En Java se utilizan dos tipos de datos para manejar cadenas de texto: *String* y *Char*
 
-~~~java
-String s1 = "Hola";
-String s2 = "Adios";
-
-s1.equals(s2); 		// Comparar cadenas 
-s1.compareTo(s2);	// Compara dos cadenas alfabéticamente, e indica cual es mayor o menor: 
-					// Devuelve: < 0 sí 's1' es mas pequeña, 0 sí 's1' y 's2' son iguales, > 0 sí la primera es mayor 
-s1.contains(s2); 	// Nos dice si la cadena contiene otra cadena 
-s1.indexOf(char); 	// Nos dice la posición dentro de 's1' del carácter char
-s1.indexOf(char, pos);	// Nos dice la posición de un carácter a partir de la posición pos 
-s1.lastIndexOf(char);	// Idem, pero desde el final 
-s1.isEmpty(); 		// Para ver si está vacía. Similar a s1.equals("") 
-s1.startWith(s2); 	// Para ver si una cadena empieza con algo 
-s1.endWith(s2); 	// Para ver si una cadena acaba con algo 
-s1.toUpperCase(); 	// Convertir a mayúsculas 
-s1.toLowerCase(); 	// Convertir a minúsculas 
-s1.replace("  ", " "); // Cambiar doble espacio por espacio simple en la cadena s1 
-s1.trim(); 			// Elimina espacios antes y después 
-char[] array = s1.toCharArray(); // Convierte un String en un Array
-s1 = new String(array); // Convierte un Array en una cadena 
-s1.substring(inicio, final) // recorta una cadena desde su inicio hasta final-1 
-s1.substring(inicio); // recorta una cadena desde su inicio hasta el final 
-String[] cadena = s1.split(“ “); // Devuelve un array conteniendo las distintas partes de una cadena divididas según el parámtero de búsqueda. Si s1 = “hola que tal”; => cadena[2].chartAt(0); => primera letra de la última palabra. ** Cuidado con el parametro de busqueda: pueden ser confundidas con expresiones regulares ** 
-String s1 = String.join (“ “, cadena); // pega en una cadena un array de String, separándolas con –en este caso- con un espacio 
-~~~
-
-Funciones de Character
+#### Funciones de Character
 
 ~~~java
 char c1 = 'A':
@@ -43,6 +17,53 @@ Character.isLetter(c1); 	// Comprobar que sea una letra
 Character.isDigit(c1); 		// Comprobar si es un número 
 Character.isUpperCase(c1);	// Comprobar si es mayúsculas 
 Character.isLowerCase(c1);	// Comprobar si es minúsculas 
+~~~
+
+#### Funciones de String 
+
+~~~java
+String s1 = "Hola";
+String s2 = "Adios";
+
+// Comparar cadenas 
+s1.equals(s2);
+// Compara dos cadenas alfabéticamente, e indica cual es mayor o menor: 
+s1.compareTo(s2); // Devuelve: < 0 sí 's1' es mas pequeña, 0 sí 's1' y 's2' son iguales, > 0 sí la primera es mayor 
+// Nos dice si la cadena contiene otra cadena 
+s1.contains(s2); 
+// Nos dice la posición dentro de 's1' del carácter char
+s1.indexOf(char);
+// Nos dice la posición de un carácter a partir de la posición pos 
+s1.indexOf(char, pos);
+// Idem, pero desde el final 
+s1.lastIndexOf(char);
+// Para ver si está vacía. Similar a s1.equals("") 
+s1.isEmpty();
+// Para ver si una cadena empieza con algo 
+s1.startWith(s2);
+// Para ver si una cadena acaba con algo 
+s1.endWith(s2);
+// Convertir a mayúsculas 
+s1.toUpperCase();
+// Convertir a minúsculas 
+s1.toLowerCase();
+// Sustituir las ocurrencias de a por b en la cadena s1
+s1.replace(a, b);
+// Elimina espacios en blano antes y después
+s1.trim();
+// Convierte un String en un Array de char
+char[] array = s1.toCharArray();
+// Convierte un Array en una cadena 
+s1 = new String(array);
+// recorta una cadena desde su inicio hasta final-1 
+s1.substring(inicio, final)
+// recorta una cadena desde su inicio hasta el final 
+s1.substring(inicio);
+// Devuelve un array conteniendo las distintas partes de una cadena divididas según el parámtero de búsqueda. 
+s1 = "hola que tal";
+String[] cadena = s1.split(" "); //cadena[2] => "tal"
+// pega en una cadena un array de String, separándolas con –en este caso- con un espacio 
+String s1 = String.join (“ “, cadena);
 ~~~
 
 ### Arrays
@@ -247,15 +268,24 @@ Los Maps es una estructura de datos que nos permiten almacenarlos como un par de
 Map<Integer, Integer> nameMap = new HashMap<Integer, Integer>();
 
 // Principales funciones
-nameMap.put(key, value); // Añadir un elemento
-nameMap.get(key); 		// Devuelve el valor de la clave 'key'. Null si la 'key' no existe
-nameMap.size(); 		// Devuelve el numero de elementos del Map
-nameMap.isEmpty(); 		// Devuelve true si no hay elementos en el Map y false si si los hay
-nameMap.clear(); 		// Elimina todos los componentes del Map
-nameMap.remove(key);	// Elimina el elemento con la clave 'key'
-nameMap.containsKey(key); 		// True si en nameMap hay una clave con el nombre 'key'
-nameMap.containsValue(value); 	// True si en nameMap hay un valor que coincide con 'value'
-nameMap.values(); 	// Devuelve un array con todos los valores de nameMap
+// Añadir un elemento
+nameMap.put(key, value);
+// Devuelve el valor de la clave 'key'. Null si la 'key' no existe
+nameMap.get(key);
+// Devuelve el numero de elementos del Map
+nameMap.size();
+// Devuelve true si no hay elementos en el Map y false si si los hay
+nameMap.isEmpty();
+// Elimina todos los componentes del Map
+nameMap.clear();
+// Elimina el elemento con la clave 'key'
+nameMap.remove(key);
+// True si en nameMap hay una clave con el nombre 'key'
+nameMap.containsKey(key);
+// True si en nameMap hay un valor que coincide con 'value'
+nameMap.containsValue(value);
+// Devuelve un array con todos los valores de nameMap
+nameMap.values();
 ~~~
 
 Esta función recibe una cadena (String) y crea un array asociativo con elementos formado por palabras y asociado al número de veces que esa palabra se encuentra en el texto
