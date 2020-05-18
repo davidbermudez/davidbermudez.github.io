@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=f2e15430b804c71f35cde11550704ae402823a14">
+        <title>Types</title>
+        <!-- Begin Jekyll SEO tag v2.6.1 -->
+        <title>Apuntes de Programación en JAVA | davidbermudez.github.io</title>
+        <meta name="generator" content="Jekyll v3.8.5"/>
+        <meta property="og:title" content="Apuntes de Programación en JAVA"/>
+        <meta property="og:locale" content="es_ES"/>
+        <link rel="canonical" href="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:url" content="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:site_name" content="davidbermudez.github.io"/>
+        <script type="application/ld+json">
+            {"headline":"Apuntes de Programación en JAVA","@type":"WebPage","url":"https://davidbermudez.github.io/Java/files/","@context":"https://schema.org"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>davidbermudez.github.io/Java</h1>
+                <h2></h2>
+
+                <section id="downloads">
+
+                    <a href="https://github.com/davidbermudez/davidbermudez.github.io/" class="btn btn-github">
+                        <span class="icon"></span>View on GitHub</a>
+                </section>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://davidbermudez.github.io/" class="btn btn-github"><span class="icon"></span>Home</a></li>
+                    <li><a href="https://davidbermudez.github.io/Java/" class="btn btn-github"><span class="icon"></span>Java</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container">
+            <section id="main_content">
+                <h1 id="apuntes-de-programación-en-java">Apuntes de Programación en JAVA</h1>
+                <h2 id="archivos-de-texto">Archivos de Texto</h2>
+
+                <p>Aquellos que pueden abrirse y <strong>leerse</strong> con normalidad por cualquier editor de texto.</p>
+
+<p>Las operaciones habituales con este tipo de archivos son:</p>
+
+<ul>
+  <li>Abrir</li>
+  <li>Leer</li>
+  <li>Escribir</li>
+  <li>Cerrar</li>
+</ul>
+
+<p>Vemos todas ellas en el siguiente bloque de código:</p>
+
+<p><strong>Leer Fichero de Texto</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">leeFicheroTexto</span><span class="o">(</span><span class="nc">String</span> <span class="n">filename</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">texto</span><span class="o">;</span>
+        <span class="k">try</span>
+        <span class="o">{</span>
+            <span class="nc">FileReader</span> <span class="n">fr</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
+            <span class="nc">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="n">fr</span><span class="o">);</span>
+
+            <span class="n">texto</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">texto</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">texto</span><span class="o">);</span>
+                <span class="n">texto</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+
+            <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="n">fr</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>Escribir Fichero de Texto</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">escribeFicheroTexto</span><span class="o">(</span><span class="nc">String</span> <span class="n">filename</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">a</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">FileWriter</span> <span class="n">fw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileWriter</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
+            <span class="nc">BufferedWriter</span> <span class="n">bw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedWriter</span><span class="o">(</span><span class="n">fw</span><span class="o">);</span>
+
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Añade linea: "</span><span class="o">);</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+            <span class="k">while</span><span class="o">(!</span><span class="n">a</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span>
+            <span class="o">{</span>
+                <span class="n">bw</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="nc">System</span><span class="o">.</span><span class="na">lineSeparator</span><span class="o">());</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Añade linea: "</span><span class="o">);</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="n">bw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="n">fw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="c1">//e.printStackTrace();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+            </section>
+        </div>
+    </body>
+
+</html>

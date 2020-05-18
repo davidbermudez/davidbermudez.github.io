@@ -32,6 +32,12 @@
                         <span class="icon"></span>View on GitHub</a>
                 </section>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="https://davidbermudez.github.io/" class="btn btn-github"><span class="icon"></span>Home</a></li>
+                    <li><a href="https://davidbermudez.github.io/Java/" class="btn btn-github"><span class="icon"></span>Java</a></li>
+                </ul>
+            </nav>
         </header>
 
         <div class="container">
@@ -39,26 +45,30 @@
                 <h1 id="apuntes-de-programación-en-java">Apuntes de Programación en JAVA</h1>
                 <h2 id="arraylist--listas">ArrayList :: Listas</h2>
 
-                <p>Tipos de datos <strong>Homogéneos</strong>, <strong>dinámicos</strong>, <strong>lineales</strong></p>
+                <p>Tipos de datos
+                    <strong>Homogéneos</strong>,
+                    <strong>dinámicos</strong>,
+                    <strong>lineales</strong>
+                </p>
 
-            <blockquote>
-                <p>List es una implementacion de la clase ArrayList</p>
-            </blockquote>
+                <blockquote>
+                    <p>List es una implementacion de la clase ArrayList</p>
+                </blockquote>
 
-            <p>Características de los ArrayList</p>
+                <p>Características de los ArrayList</p>
 
-            <ul>
-                <li>Un ArrayList tiene un tamaño dinámico, mientras que el de un Array es definido en su creación.</li>
-                <li>Un ArrayList no puede contener datos primitivos, sólo Objetos.</li>
-                <li>El ArrayList permite comprobar que los datos que se añaden a la colección son del tipo correcto en
-                    tiempo de compilación.</li>
-                <li>El Array puede ser de varias dimensiones, el ArrayList es unidimensional (aunque pueda ser un
-                    ArrayList de ArrayLists).</li>
-            </ul>
+                <ul>
+                    <li>Un ArrayList tiene un tamaño dinámico, mientras que el de un Array es definido en su creación.</li>
+                    <li>Un ArrayList no puede contener datos primitivos, sólo Objetos.</li>
+                    <li>El ArrayList permite comprobar que los datos que se añaden a la colección son del tipo correcto en
+                                            tiempo de compilación.</li>
+                    <li>El Array puede ser de varias dimensiones, el ArrayList es unidimensional (aunque pueda ser un
+                                            ArrayList de ArrayLists).</li>
+                </ul>
 
-            <div class="language-java highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight"><code><span class="c1">// Tipos de listas</span>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Tipos de listas</span>
 <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">li</span><span class="o">;</span>
 <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Double</span><span class="o">&gt;</span> <span class="n">ld</span><span class="o">;</span>
 <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">&gt;</span> <span class="n">lc</span><span class="o">;</span>
@@ -112,19 +122,19 @@
 <span class="nc">Collections</span><span class="o">.</span><span class="na">shuffle</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
 
 </code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <div class="language-java highlighter-rouge">
-                <div class="highlight">
-                    <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">ordenaLista</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">lista</span><span class="o">)</span>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">ordenaLista</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">lista</span><span class="o">)</span>
 <span class="o">{</span>
     <span class="nc">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">lista</span><span class="o">);</span>
     <span class="k">return</span> <span class="n">lista</span><span class="o">;</span>
 <span class="o">}</span>
 </code></pre>
+                    </div>
                 </div>
-            </div>
             </section>
         </div>
     </body>
