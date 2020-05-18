@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=f2e15430b804c71f35cde11550704ae402823a14">
+        <title>Types</title>
+        <!-- Begin Jekyll SEO tag v2.6.1 -->
+        <title>Apuntes de Programación en JAVA | davidbermudez.github.io</title>
+        <meta name="generator" content="Jekyll v3.8.5"/>
+        <meta property="og:title" content="Apuntes de Programación en JAVA"/>
+        <meta property="og:locale" content="es_ES"/>
+        <link rel="canonical" href="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:url" content="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:site_name" content="davidbermudez.github.io"/>
+        <script type="application/ld+json">
+            {"headline":"Apuntes de Programación en JAVA","@type":"WebPage","url":"https://davidbermudez.github.io/Java/files/","@context":"https://schema.org"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>davidbermudez.github.io/Java</h1>
+                <h2></h2>
+
+                <section id="downloads">
+
+                    <a href="https://github.com/davidbermudez/davidbermudez.github.io/" class="btn btn-github">
+                        <span class="icon"></span>View on GitHub</a>
+                </section>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="main_content">
+                <h1 id="apuntes-de-programación-en-java">Apuntes de Programación en JAVA</h1>
+                <h2 id="arraylist--listas">ArrayList :: Listas</h2>
+
+                <p>Tipos de datos <strong>Homogéneos</strong>, <strong>dinámicos</strong>, <strong>lineales</strong></p>
+
+            <blockquote>
+                <p>List es una implementacion de la clase ArrayList</p>
+            </blockquote>
+
+            <p>Características de los ArrayList</p>
+
+            <ul>
+                <li>Un ArrayList tiene un tamaño dinámico, mientras que el de un Array es definido en su creación.</li>
+                <li>Un ArrayList no puede contener datos primitivos, sólo Objetos.</li>
+                <li>El ArrayList permite comprobar que los datos que se añaden a la colección son del tipo correcto en
+                    tiempo de compilación.</li>
+                <li>El Array puede ser de varias dimensiones, el ArrayList es unidimensional (aunque pueda ser un
+                    ArrayList de ArrayLists).</li>
+            </ul>
+
+            <div class="language-java highlighter-rouge">
+                <div class="highlight">
+                    <pre class="highlight"><code><span class="c1">// Tipos de listas</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">li</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Double</span><span class="o">&gt;</span> <span class="n">ld</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">&gt;</span> <span class="n">lc</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Boolean</span><span class="o">&gt;</span> <span class="n">lb</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">ls</span><span class="o">;</span>
+
+<span class="c1">// Creamos la lista</span>
+<span class="n">li</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span> <span class="c1">// más rápida para recorrer la lista (con un for)</span>
+<span class="n">li</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span> <span class="c1">// más rápida para añadir o insertar elementos</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">l2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
+
+<span class="c1">// Añadir elementos a una lista (al final)</span>
+<span class="n">li</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">115</span><span class="o">);</span>
+<span class="c1">// Añadir elemento en la posición pos</span>
+<span class="n">li</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="mi">115</span><span class="o">)</span>
+<span class="c1">// Modificar un elemento (en la posición pos)</span>
+<span class="n">li</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="mi">116</span><span class="o">)</span>
+<span class="c1">// Acceder a un elemento</span>
+<span class="n">li</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pos</span><span class="o">)</span>
+<span class="c1">// Acceder a su posicion</span>
+<span class="n">li</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="n">elemento</span><span class="o">)</span>
+<span class="c1">// Tamaño de la lista</span>
+<span class="n">li</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+<span class="c1">// Borrar por posición</span>
+<span class="n">li</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">pos</span><span class="o">)</span>
+<span class="c1">// Borrar por elemento</span>
+<span class="nc">Integer</span> <span class="n">ele</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="n">li</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">ele</span><span class="o">);</span>
+<span class="c1">// CONTAINS</span>
+<span class="n">li</span><span class="o">.</span><span class="na">contains</span><span class="o">();</span> <span class="c1">// igual que el de cadenas</span>
+<span class="c1">// INDEXOF</span>
+<span class="n">li</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">// igual que el de cadenas</span>
+<span class="c1">// SUBLIST</span>
+<span class="n">li</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span> <span class="c1">// como SubString</span>
+<span class="c1">// Añade la lista l3 a la lista l2</span>
+<span class="n">l2</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">l3</span><span class="o">);</span>
+<span class="c1">// Añade el array arr a la lista l2</span>
+<span class="n">l2</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="nc">Array</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr</span><span class="o">));</span>
+<span class="c1">// Convertir una lista en un array</span>
+<span class="nc">Integer</span><span class="o">[]</span> <span class="n">ai2</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Integer</span><span class="o">[])</span><span class="n">li</span><span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="c1">// CLEAR</span>
+<span class="n">li</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+<span class="c1">// RESTO DE FUNCIONES CHULAS ESTÁN EN COLLECTIONS</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"min = "</span> <span class="o">+</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">l2</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"max = "</span> <span class="o">+</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">l2</span><span class="o">));</span>
+<span class="c1">// poner la lista al revés</span>
+<span class="nc">Collections</span><span class="o">.</span><span class="na">reverse</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
+<span class="c1">// ordenar la lista</span>
+<span class="nc">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
+<span class="c1">// desordenar la lista</span>
+<span class="nc">Collections</span><span class="o">.</span><span class="na">shuffle</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
+
+</code></pre>
+                </div>
+            </div>
+
+            <div class="language-java highlighter-rouge">
+                <div class="highlight">
+                    <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">ordenaLista</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">lista</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="nc">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">lista</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">lista</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+                </div>
+            </div>
+            </section>
+        </div>
+    </body>
+
+</html>

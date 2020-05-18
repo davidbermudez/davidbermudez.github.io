@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=f2e15430b804c71f35cde11550704ae402823a14">
+        <title>Types</title>
+        <!-- Begin Jekyll SEO tag v2.6.1 -->
+        <title>Apuntes de Programación en JAVA | davidbermudez.github.io</title>
+        <meta name="generator" content="Jekyll v3.8.5"/>
+        <meta property="og:title" content="Apuntes de Programación en JAVA"/>
+        <meta property="og:locale" content="es_ES"/>
+        <link rel="canonical" href="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:url" content="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:site_name" content="davidbermudez.github.io"/>
+        <script type="application/ld+json">
+            {"headline":"Apuntes de Programación en JAVA","@type":"WebPage","url":"https://davidbermudez.github.io/Java/files/","@context":"https://schema.org"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>davidbermudez.github.io/Java</h1>
+                <h2></h2>
+
+                <section id="downloads">
+
+                    <a href="https://github.com/davidbermudez/davidbermudez.github.io/" class="btn btn-github">
+                        <span class="icon"></span>View on GitHub</a>
+                </section>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="main_content">
+                <h1 id="apuntes-de-programación-en-java">Apuntes de Programación en JAVA</h1>
+                <h2 id="arrays">Arrays</h2>
+                <p>Son tipos de datos
+                    <strong>Homogéneos</strong>,
+                    <strong>estáticos</strong>
+                    y
+                    <strong>lineales</strong>.
+                </p>
+
+                <p>Funciones de arrays</p>
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// Ordenar un array (QuickSort)</span>
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
+    <span class="c1">// Copiar un array</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">array1</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">};</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">array2</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">array1</span><span class="o">,</span> <span class="n">array1</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+    <span class="c1">// Comparar dos arrays</span>
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">array1</span><span class="o">,</span> <span class="n">array2</span><span class="o">);</span>
+    <span class="c1">// Copiar un trozo del array</span>
+    <span class="n">array2</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">array1</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <p>Funciones de utilidad
+                    <strong>ARRAYS</strong>
+                </p>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">rellenaAleatorioMaxMinInt</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">min</span><span class="o">,</span> <span class="kt">int</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Completa un array con valores enteros aleatorios dado un máximo y mínimo.</span>
+        <span class="nc">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Random</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">max</span> <span class="o">-</span> <span class="n">min</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">min</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">borraDeArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Devuelve un array igual al enviado quitando el elemento indicado por 'pos'</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="o">;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">b</span><span class="o">;</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">contiene</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Función que comprueba si un elemento está en el array (sin convertir en 'lista')</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">elimina1ElementoArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Utilizando las dos funciones anteriores, devuelve un array al que le hemos eliminado </span>
+        <span class="c1">// el primer elemento 'b' que encuentra, en el caso de que exista.</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">c</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">contiene</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">))</span>
+        <span class="o">{</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+            <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span>
+                <span class="o">{</span>
+                    <span class="n">c</span> <span class="o">=</span> <span class="n">borraDeArray</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+                    <span class="k">return</span> <span class="n">c</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">c</span><span class="o">;</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">eliminaElementosArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">){</span>
+        <span class="c1">// Devuelve un array tras eliminar todos los elementos 'b' que haya en el array pasado</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">d</span><span class="o">;</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+                <span class="n">d</span> <span class="o">=</span> <span class="n">elimina1ElementoArray</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">d</span><span class="o">;</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">maxArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Devuelve el elemento mayor de un array</span>
+        <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">max</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">max</span><span class="o">;</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">minArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Devuelve el elemento menor de un array</span>
+        <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">min</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">min</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">min</span><span class="o">;</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">imprimeArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// Presenta por pantalla un array</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"["</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">", "</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">);</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+
+</html>

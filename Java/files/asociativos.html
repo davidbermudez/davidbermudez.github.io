@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=f2e15430b804c71f35cde11550704ae402823a14">
+        <title>Types</title>
+        <!-- Begin Jekyll SEO tag v2.6.1 -->
+        <title>Apuntes de Programación en JAVA | davidbermudez.github.io</title>
+        <meta name="generator" content="Jekyll v3.8.5"/>
+        <meta property="og:title" content="Apuntes de Programación en JAVA"/>
+        <meta property="og:locale" content="es_ES"/>
+        <link rel="canonical" href="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:url" content="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:site_name" content="davidbermudez.github.io"/>
+        <script type="application/ld+json">
+            {"headline":"Apuntes de Programación en JAVA","@type":"WebPage","url":"https://davidbermudez.github.io/Java/files/","@context":"https://schema.org"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>davidbermudez.github.io/Java</h1>
+                <h2></h2>
+
+                <section id="downloads">
+
+                    <a href="https://github.com/davidbermudez/davidbermudez.github.io/" class="btn btn-github">
+                        <span class="icon"></span>View on GitHub</a>
+                </section>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="main_content">
+                <h1 id="apuntes-de-programación-en-java">Apuntes de Programación en JAVA</h1>
+                <h2 id="arrays-asociativos--maps">Arrays Asociativos :: Maps</h2>
+
+                <p>Los Maps es una estructura de datos que nos permiten almacenarlos como un par de valores asociados
+                                        clave=&gt;valor. También son conocidos como Diccionarios.</p>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="c1">// declaración del Map</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">nameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;();</span>
+    
+    <span class="c1">// Principales funciones</span>
+    <span class="c1">// Añadir un elemento</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+    <span class="c1">// Devuelve el valor de la clave 'key'. Null si la 'key' no existe</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+    <span class="c1">// Devuelve el numero de elementos del Map</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+    <span class="c1">// Devuelve true si no hay elementos en el Map y false si si los hay</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+    <span class="c1">// Elimina todos los componentes del Map</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+    <span class="c1">// Elimina el elemento con la clave 'key'</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+    <span class="c1">// True si en nameMap hay una clave con el nombre 'key'</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+    <span class="c1">// True si en nameMap hay un valor que coincide con 'value'</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="c1">// Devuelve un array con todos los valores de nameMap</span>
+    <span class="n">nameMap</span><span class="o">.</span><span class="na">values</span><span class="o">();</span>
+    </code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">leerCadena</span><span class="o">(</span><span class="nc">String</span> <span class="n">cadena</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// Esta función recibe una cadena (String) y crea un array asociativo</span>
+        <span class="c1">// con elementos formado por palabras y asociado al número de veces que </span>
+        <span class="c1">// esa palabra se encuentra en el texto</span>
+    
+        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">palabras</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+    
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">arrayTexto</span> <span class="o">=</span> <span class="n">cadena</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arrayTexto</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">cadena</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">])){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">palabras</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span>
+                <span class="o">{</span>
+                    <span class="n">palabras</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">palabras</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">else</span>
+                <span class="o">{</span>
+                    <span class="n">palabras</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="mi">1</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">palabras</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">" -&gt; "</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    </code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../../assets/css/style.css?v=f2e15430b804c71f35cde11550704ae402823a14">
+        <title>Types</title>
+        <!-- Begin Jekyll SEO tag v2.6.1 -->
+        <title>Apuntes de Programación en JAVA | davidbermudez.github.io</title>
+        <meta name="generator" content="Jekyll v3.8.5"/>
+        <meta property="og:title" content="Apuntes de Programación en JAVA"/>
+        <meta property="og:locale" content="es_ES"/>
+        <link rel="canonical" href="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:url" content="https://davidbermudez.github.io/Java/files"/>
+        <meta property="og:site_name" content="davidbermudez.github.io"/>
+        <script type="application/ld+json">
+            {"headline":"Apuntes de Programación en JAVA","@type":"WebPage","url":"https://davidbermudez.github.io/Java/files/","@context":"https://schema.org"}</script>
+        <!-- End Jekyll SEO tag -->
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>davidbermudez.github.io/Java</h1>
+                <h2></h2>
+
+                <section id="downloads">
+
+                    <a href="https://github.com/davidbermudez/davidbermudez.github.io/" class="btn btn-github">
+                        <span class="icon"></span>View on GitHub</a>
+                </section>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="main_content">
+                <h1 id="apuntes-de-programación-en-java">Apuntes de Programación en JAVA</h1>
+                <h3 id="string">String</h3>
+
+                <p>Son tipos de datos
+                    <strong>Homogéneos</strong>,
+                    <strong>estáticos</strong>
+                    y
+                    <strong>lineales</strong>.
+                </p>
+
+                <p>En Java se utilizan dos tipos de datos para manejar cadenas de texto:
+                    <em>String</em>
+                    y
+                    <em>Char</em>
+                </p>
+
+                <h4 id="funciones-de-character">Funciones de Character</h4>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kt">char</span> <span class="n">c1</span> <span class="o">=</span> <span class="sc">'A'</span><span class="o">:</span>
+
+<span class="nc">Character</span><span class="o">.</span><span class="na">isLetter</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span> 	<span class="c1">// Comprobar que sea una letra </span>
+<span class="nc">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span> 		<span class="c1">// Comprobar si es un número </span>
+<span class="nc">Character</span><span class="o">.</span><span class="na">isUpperCase</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span>	<span class="c1">// Comprobar si es mayúsculas </span>
+<span class="nc">Character</span><span class="o">.</span><span class="na">isLowerCase</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span>	<span class="c1">// Comprobar si es minúsculas </span>
+</code></pre>
+                    </div>
+                </div>
+
+                <h4 id="funciones-de-string">Funciones de String</h4>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="nc">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">"Hola"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">"Adios"</span><span class="o">;</span>
+
+<span class="c1">// Comparar cadenas </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+<span class="c1">// Compara dos cadenas alfabéticamente, e indica cual es mayor o menor: </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span> <span class="c1">// Devuelve: &lt; 0 sí 's1' es mas pequeña, 0 sí 's1' y 's2' son iguales, &gt; 0 sí la primera es mayor </span>
+<span class="c1">// Nos dice si la cadena contiene otra cadena </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span> 
+<span class="c1">// Nos dice la posición dentro de 's1' del carácter char</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="kt">char</span><span class="o">);</span>
+<span class="c1">// Nos dice la posición de un carácter a partir de la posición pos </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="kt">char</span><span class="o">,</span> <span class="n">pos</span><span class="o">);</span>
+<span class="c1">// Idem, pero desde el final </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">(</span><span class="kt">char</span><span class="o">);</span>
+<span class="c1">// Para ver si está vacía. Similar a s1.equals("") </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+<span class="c1">// Para ver si una cadena empieza con algo </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">startWith</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+<span class="c1">// Para ver si una cadena acaba con algo </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">endWith</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+<span class="c1">// Convertir a mayúsculas </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
+<span class="c1">// Convertir a minúsculas </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>
+<span class="c1">// Sustituir las ocurrencias de a por b en la cadena s1</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+<span class="c1">// Elimina espacios en blano antes y después</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
+<span class="c1">// Convierte un String en un Array de char</span>
+<span class="kt">char</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+<span class="c1">// Convierte un Array en una cadena </span>
+<span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
+<span class="c1">// recorta una cadena desde su inicio hasta final-1 </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">inicio</span><span class="o">,</span> <span class="kd">final</span><span class="o">)</span>
+<span class="c1">// recorta una cadena desde su inicio hasta el final </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">inicio</span><span class="o">);</span>
+<span class="c1">// Devuelve un array conteniendo las distintas partes de una cadena divididas según el parámtero de búsqueda. </span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s">"hola que tal"</span><span class="o">;</span>
+<span class="nc">String</span><span class="o">[]</span> <span class="n">cadena</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span> <span class="c1">//cadena[2] =&gt; "tal"</span>
+<span class="c1">// pega en una cadena un array de String, separándolas con –en este caso- con un espacio </span>
+<span class="nc">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">join</span> <span class="o">(</span><span class="s">" "</span><span class="o">,</span> <span class="n">cadena</span><span class="o">);</span>
+</code></pre>
+                    </div>
+                </div>
+
+                <p>Algunas funciones útiles</p>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">quitaAcentos</span><span class="o">(</span><span class="nc">String</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">acentos</span> <span class="o">=</span> <span class="s">"áÁéÉíÍóÓúÚüÜ"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">normal</span> <span class="o">=</span> <span class="s">"aAeEiIoOuUuU"</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">acentos</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">acentos</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">),</span> <span class="n">normal</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>        
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">compruebaEmail</span><span class="o">(</span><span class="nc">String</span> <span class="n">a</span><span class="o">){</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">"^[^@]+@[^@]+\\.[a-zA-Z]{2,}$"</span><span class="o">)){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+                    </div>
+                </div>
+
+                <p>Funciones con fechas y horas</p>
+
+                <div class="language-java highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasMes</span><span class="o">(</span><span class="kt">int</span> <span class="n">mes</span><span class="o">){</span>
+    <span class="kt">int</span> <span class="n">devuelve</span><span class="o">;</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">mes</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="k">case</span> <span class="mi">5</span><span class="o">:</span> <span class="k">case</span> <span class="mi">7</span><span class="o">:</span> <span class="k">case</span> <span class="mi">8</span><span class="o">:</span> <span class="k">case</span> <span class="mi">10</span><span class="o">:</span> <span class="k">case</span> <span class="mi">12</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">31</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">28</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span> <span class="k">case</span> <span class="mi">6</span><span class="o">:</span> <span class="k">case</span> <span class="mi">9</span><span class="o">:</span> <span class="k">case</span> <span class="mi">11</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">devuelve</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasMes2</span><span class="o">(</span><span class="kt">int</span> <span class="n">mes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">anno</span><span class="o">){</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">bisiesto</span><span class="o">(</span><span class="n">anno</span><span class="o">))</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">29</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">else</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">diasMes</span><span class="o">(</span><span class="n">mes</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">bisiesto</span><span class="o">(</span><span class="kt">int</span> <span class="n">anno</span><span class="o">){</span>
+    <span class="c1">// Año bisiesto es el divisible entre 4,</span>
+    <span class="c1">// salvo que sea año secular -último de cada siglo,</span>
+    <span class="c1">// terminado en «00»-, en cuyo caso también</span>
+    <span class="c1">// ha de ser divisible entre 400.</span>
+    <span class="kt">boolean</span> <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">anno</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// año secular</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">anno</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="c1">// divisible entre 400</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">anno</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">devuelve</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasTranscurridos</span><span class="o">(</span><span class="kt">int</span> <span class="n">dia</span><span class="o">,</span> <span class="kt">int</span> <span class="n">mes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">anno</span><span class="o">){</span>
+    <span class="c1">// desde el 01/01 del año actual</span>
+    <span class="kt">int</span> <span class="n">dias</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">;</span>
+    <span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mes</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="o">{</span>
+        <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="n">diasMes2</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">anno</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="n">dia</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">dias</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasTranscurridos1980</span><span class="o">(</span><span class="kt">int</span> <span class="n">dia</span><span class="o">,</span> <span class="kt">int</span> <span class="n">mes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">anno</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// desde el 01/01 del año 1980</span>
+    <span class="kt">int</span> <span class="n">dias</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1980</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">anno</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">bisiesto</span><span class="o">(</span><span class="n">j</span><span class="o">))</span>
+        <span class="o">{</span>
+            <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="mi">366</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="mi">365</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">// ultimo año</span>
+    <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="n">diasTranscurridos</span><span class="o">(</span><span class="n">dia</span><span class="o">,</span> <span class="n">mes</span><span class="o">,</span> <span class="n">anno</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">dias</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasEntreFechas</span><span class="o">(</span><span class="kt">int</span> <span class="n">d1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">d2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a2</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">diasTotal1</span><span class="o">,</span> <span class="n">diasTotal2</span><span class="o">,</span> <span class="n">diferencia</span><span class="o">;</span>
+    <span class="n">diasTotal1</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d1</span><span class="o">,</span> <span class="n">m1</span><span class="o">,</span> <span class="n">a1</span><span class="o">);</span>
+    <span class="n">diasTotal2</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d2</span><span class="o">,</span> <span class="n">m2</span><span class="o">,</span> <span class="n">a2</span><span class="o">);</span>
+    <span class="n">diferencia</span> <span class="o">=</span> <span class="n">diasTotal2</span> <span class="o">-</span> <span class="n">diasTotal1</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">diferencia</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diaSemanaFecha</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">def</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d</span><span class="o">,</span><span class="n">m</span><span class="o">,</span><span class="n">a</span><span class="o">);</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">def</span> <span class="o">%</span> <span class="mi">7</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">horaASegundos</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">s</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">escribeHoraBonita</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// valores permitidos</span>
+    <span class="c1">// esta función admite cualquier valor en minutos y segundos</span>
+        
+    <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="o">){</span>
+        <span class="c1">// el exceso se lo añadimos a los minutos</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="o">(</span><span class="n">s</span> <span class="o">/</span> <span class="mi">60</span><span class="o">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">s</span> <span class="o">%</span> <span class="mi">60</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="o">){</span>
+        <span class="c1">// el exceso se lo añadimos a las horas</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="o">(</span><span class="n">m</span> <span class="o">/</span> <span class="mi">60</span><span class="o">);</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="o">(</span><span class="n">m</span> <span class="o">%</span> <span class="mi">60</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="nc">String</span> <span class="n">hora</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">h</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">hora</span> <span class="o">=</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="n">h</span> <span class="o">+</span> <span class="s">":"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="s">":"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="n">s</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">hora</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">escribeSegundosBonito</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">return</span> <span class="nf">escribeHoraBonita</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">segundosTranscurridos</span><span class="o">(</span><span class="kt">int</span> <span class="n">h1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s2</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">h2</span> <span class="o">-</span> <span class="n">h1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="o">(</span><span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="o">(</span><span class="n">s2</span> <span class="o">-</span> <span class="n">s1</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">segundosTranscurridos1980</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="no">M</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">-</span> <span class="mi">86400</span><span class="o">;</span>  <span class="c1">// restamos los segundos existentes en las últimas 24 horas</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">segundosTranscurridos</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="no">M</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html></div></body></html>
