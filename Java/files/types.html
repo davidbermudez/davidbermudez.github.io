@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css?v=f2e15430b804c71f35cde11550704ae402823a14">
+    <title>Types</title>
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Apuntes de Programación en JAVA | davidbermudez.github.io</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Apuntes de Programación en JAVA" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://davidbermudez.github.io/Java/files" />
+<meta property="og:url" content="https://davidbermudez.github.io/Java/files" />
+<meta property="og:site_name" content="davidbermudez.github.io" />
+<script type="application/ld+json">
+{"headline":"Apuntes de Programación en JAVA","@type":"WebPage","url":"https://davidbermudez.github.io/Java/files/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1>davidbermudez.github.io/Java</h1>
+          <h2></h2>
+  
+          <section id="downloads">
+            
+            <a href="https://github.com/davidbermudez/davidbermudez.github.io/Java/" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+          </section>
+        </div>
+      </header>
+      <h2 id="tipos-de-datos">Tipos de Datos</h2>
+
+<ul>
+  <li>Homogéneas / Heterogéneas</li>
+</ul>
+
+<p>Según permita guardar datos del mismo tipo o de distintos tipos</p>
+
+<ul>
+  <li>Estáticas / Dinámicas</li>
+</ul>
+
+<p>Según el número de elementos sea fijo o variable</p>
+
+<ul>
+  <li>Lineales / No lineales</li>
+</ul>
+
+<p>Según guarden una ristra de datos, o en cambio pueden ser guardadas en otro tipo de estructuras. En este curso solo veremos las lineales</p>
+
+<h3 id="integer">Integer</h3>
+
+<p>Tipo de datos  <strong>homogéneos</strong>, <strong>estáticos</strong> y <strong>lineáles</strong></p>
+
+<p>Representan números enteros con signo, con valores permitidos desde -2147483648 hasta el 2147483647</p>
+
+<p>Algunas funciones útiles</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">primo</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="o">;</span>
+    <span class="kt">boolean</span> <span class="n">devuelve</span><span class="o">;</span>
+    <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">devuelve</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="string">String</h3>
+
+<p>Son tipos de datos <strong>Homogéneos</strong>, <strong>estáticos</strong> y <strong>lineales</strong>.</p>
+
+<p>En Java se utilizan dos tipos de datos para manejar cadenas de texto: <em>String</em> y <em>Char</em></p>
+
+<h4 id="funciones-de-character">Funciones de Character</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">c1</span> <span class="o">=</span> <span class="sc">'A'</span><span class="o">:</span>
+
+<span class="nc">Character</span><span class="o">.</span><span class="na">isLetter</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span> 	<span class="c1">// Comprobar que sea una letra </span>
+<span class="nc">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span> 		<span class="c1">// Comprobar si es un número </span>
+<span class="nc">Character</span><span class="o">.</span><span class="na">isUpperCase</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span>	<span class="c1">// Comprobar si es mayúsculas </span>
+<span class="nc">Character</span><span class="o">.</span><span class="na">isLowerCase</span><span class="o">(</span><span class="n">c1</span><span class="o">);</span>	<span class="c1">// Comprobar si es minúsculas </span>
+</code></pre></div></div>
+
+<h4 id="funciones-de-string">Funciones de String</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">"Hola"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">"Adios"</span><span class="o">;</span>
+
+<span class="c1">// Comparar cadenas </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+<span class="c1">// Compara dos cadenas alfabéticamente, e indica cual es mayor o menor: </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span> <span class="c1">// Devuelve: &lt; 0 sí 's1' es mas pequeña, 0 sí 's1' y 's2' son iguales, &gt; 0 sí la primera es mayor </span>
+<span class="c1">// Nos dice si la cadena contiene otra cadena </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span> 
+<span class="c1">// Nos dice la posición dentro de 's1' del carácter char</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="kt">char</span><span class="o">);</span>
+<span class="c1">// Nos dice la posición de un carácter a partir de la posición pos </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="kt">char</span><span class="o">,</span> <span class="n">pos</span><span class="o">);</span>
+<span class="c1">// Idem, pero desde el final </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">(</span><span class="kt">char</span><span class="o">);</span>
+<span class="c1">// Para ver si está vacía. Similar a s1.equals("") </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+<span class="c1">// Para ver si una cadena empieza con algo </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">startWith</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+<span class="c1">// Para ver si una cadena acaba con algo </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">endWith</span><span class="o">(</span><span class="n">s2</span><span class="o">);</span>
+<span class="c1">// Convertir a mayúsculas </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">();</span>
+<span class="c1">// Convertir a minúsculas </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>
+<span class="c1">// Sustituir las ocurrencias de a por b en la cadena s1</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+<span class="c1">// Elimina espacios en blano antes y después</span>
+<span class="n">s1</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
+<span class="c1">// Convierte un String en un Array de char</span>
+<span class="kt">char</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+<span class="c1">// Convierte un Array en una cadena </span>
+<span class="n">s1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
+<span class="c1">// recorta una cadena desde su inicio hasta final-1 </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">inicio</span><span class="o">,</span> <span class="kd">final</span><span class="o">)</span>
+<span class="c1">// recorta una cadena desde su inicio hasta el final </span>
+<span class="n">s1</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">inicio</span><span class="o">);</span>
+<span class="c1">// Devuelve un array conteniendo las distintas partes de una cadena divididas según el parámtero de búsqueda. </span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s">"hola que tal"</span><span class="o">;</span>
+<span class="nc">String</span><span class="o">[]</span> <span class="n">cadena</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span> <span class="c1">//cadena[2] =&gt; "tal"</span>
+<span class="c1">// pega en una cadena un array de String, separándolas con –en este caso- con un espacio </span>
+<span class="nc">String</span> <span class="n">s1</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">join</span> <span class="o">(</span><span class="s">" "</span><span class="o">,</span> <span class="n">cadena</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Algunas funciones útiles</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">quitaAcentos</span><span class="o">(</span><span class="nc">String</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">acentos</span> <span class="o">=</span> <span class="s">"áÁéÉíÍóÓúÚüÜ"</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">normal</span> <span class="o">=</span> <span class="s">"aAeEiIoOuUuU"</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">acentos</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">acentos</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">),</span> <span class="n">normal</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>        
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">compruebaEmail</span><span class="o">(</span><span class="nc">String</span> <span class="n">a</span><span class="o">){</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="s">"^[^@]+@[^@]+\\.[a-zA-Z]{2,}$"</span><span class="o">)){</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Funciones con fechas y horas</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasMes</span><span class="o">(</span><span class="kt">int</span> <span class="n">mes</span><span class="o">){</span>
+    <span class="kt">int</span> <span class="n">devuelve</span><span class="o">;</span>
+    <span class="k">switch</span> <span class="o">(</span><span class="n">mes</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span> <span class="k">case</span> <span class="mi">3</span><span class="o">:</span> <span class="k">case</span> <span class="mi">5</span><span class="o">:</span> <span class="k">case</span> <span class="mi">7</span><span class="o">:</span> <span class="k">case</span> <span class="mi">8</span><span class="o">:</span> <span class="k">case</span> <span class="mi">10</span><span class="o">:</span> <span class="k">case</span> <span class="mi">12</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">31</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">28</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span> <span class="k">case</span> <span class="mi">6</span><span class="o">:</span> <span class="k">case</span> <span class="mi">9</span><span class="o">:</span> <span class="k">case</span> <span class="mi">11</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">30</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">default</span><span class="o">:</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">devuelve</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasMes2</span><span class="o">(</span><span class="kt">int</span> <span class="n">mes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">anno</span><span class="o">){</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">bisiesto</span><span class="o">(</span><span class="n">anno</span><span class="o">))</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="mi">29</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">else</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">diasMes</span><span class="o">(</span><span class="n">mes</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">bisiesto</span><span class="o">(</span><span class="kt">int</span> <span class="n">anno</span><span class="o">){</span>
+    <span class="c1">// Año bisiesto es el divisible entre 4,</span>
+    <span class="c1">// salvo que sea año secular -último de cada siglo,</span>
+    <span class="c1">// terminado en «00»-, en cuyo caso también</span>
+    <span class="c1">// ha de ser divisible entre 400.</span>
+    <span class="kt">boolean</span> <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">anno</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="c1">// año secular</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">anno</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="c1">// divisible entre 400</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">anno</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">devuelve</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasTranscurridos</span><span class="o">(</span><span class="kt">int</span> <span class="n">dia</span><span class="o">,</span> <span class="kt">int</span> <span class="n">mes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">anno</span><span class="o">){</span>
+    <span class="c1">// desde el 01/01 del año actual</span>
+    <span class="kt">int</span> <span class="n">dias</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">;</span>
+    <span class="k">for</span><span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mes</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+    <span class="o">{</span>
+        <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="n">diasMes2</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">anno</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="n">dia</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">dias</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasTranscurridos1980</span><span class="o">(</span><span class="kt">int</span> <span class="n">dia</span><span class="o">,</span> <span class="kt">int</span> <span class="n">mes</span><span class="o">,</span> <span class="kt">int</span> <span class="n">anno</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// desde el 01/01 del año 1980</span>
+    <span class="kt">int</span> <span class="n">dias</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1980</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">anno</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">bisiesto</span><span class="o">(</span><span class="n">j</span><span class="o">))</span>
+        <span class="o">{</span>
+            <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="mi">366</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span>
+        <span class="o">{</span>
+            <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="mi">365</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">// ultimo año</span>
+    <span class="n">dias</span> <span class="o">=</span> <span class="n">dias</span> <span class="o">+</span> <span class="n">diasTranscurridos</span><span class="o">(</span><span class="n">dia</span><span class="o">,</span> <span class="n">mes</span><span class="o">,</span> <span class="n">anno</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">dias</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diasEntreFechas</span><span class="o">(</span><span class="kt">int</span> <span class="n">d1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">d2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a2</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">diasTotal1</span><span class="o">,</span> <span class="n">diasTotal2</span><span class="o">,</span> <span class="n">diferencia</span><span class="o">;</span>
+    <span class="n">diasTotal1</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d1</span><span class="o">,</span> <span class="n">m1</span><span class="o">,</span> <span class="n">a1</span><span class="o">);</span>
+    <span class="n">diasTotal2</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d2</span><span class="o">,</span> <span class="n">m2</span><span class="o">,</span> <span class="n">a2</span><span class="o">);</span>
+    <span class="n">diferencia</span> <span class="o">=</span> <span class="n">diasTotal2</span> <span class="o">-</span> <span class="n">diasTotal1</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">diferencia</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">diaSemanaFecha</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">def</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d</span><span class="o">,</span><span class="n">m</span><span class="o">,</span><span class="n">a</span><span class="o">);</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">def</span> <span class="o">%</span> <span class="mi">7</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">horaASegundos</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">return</span> <span class="n">h</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="n">s</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">escribeHoraBonita</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// valores permitidos</span>
+    <span class="c1">// esta función admite cualquier valor en minutos y segundos</span>
+        
+    <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="o">){</span>
+        <span class="c1">// el exceso se lo añadimos a los minutos</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="o">(</span><span class="n">s</span> <span class="o">/</span> <span class="mi">60</span><span class="o">);</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="o">(</span><span class="n">s</span> <span class="o">%</span> <span class="mi">60</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">59</span><span class="o">){</span>
+        <span class="c1">// el exceso se lo añadimos a las horas</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="o">(</span><span class="n">m</span> <span class="o">/</span> <span class="mi">60</span><span class="o">);</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="o">(</span><span class="n">m</span> <span class="o">%</span> <span class="mi">60</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="nc">String</span> <span class="n">hora</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">h</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">hora</span> <span class="o">=</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="n">h</span> <span class="o">+</span> <span class="s">":"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="s">":"</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="s">"0"</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="n">hora</span> <span class="o">=</span> <span class="n">hora</span> <span class="o">+</span> <span class="n">s</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">hora</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">escribeSegundosBonito</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">return</span> <span class="nf">escribeHoraBonita</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">segundosTranscurridos</span><span class="o">(</span><span class="kt">int</span> <span class="n">h1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s2</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">h2</span> <span class="o">-</span> <span class="n">h1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="o">(</span><span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span><span class="o">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="o">(</span><span class="n">s2</span> <span class="o">-</span> <span class="n">s1</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">segundosTranscurridos1980</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="no">M</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">diasTranscurridos1980</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">-</span> <span class="mi">86400</span><span class="o">;</span>  <span class="c1">// restamos los segundos existentes en las últimas 24 horas</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">segundosTranscurridos</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="no">M</span><span class="o">,</span> <span class="n">s</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="arrays">Arrays</h3>
+
+<p>Son tipos de datos <strong>Homogéneos</strong>, <strong>estáticos</strong> y <strong>lineales</strong>.</p>
+
+<p>Funciones de arrays</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Ordenar un array (QuickSort)</span>
+<span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
+<span class="c1">// Copiar un array</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">array1</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">array2</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">array1</span><span class="o">,</span> <span class="n">array1</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+<span class="c1">// Comparar dos arrays</span>
+<span class="nc">Arrays</span><span class="o">.</span><span class="na">compare</span><span class="o">(</span><span class="n">array1</span><span class="o">,</span> <span class="n">array2</span><span class="o">);</span>
+<span class="c1">// Copiar un trozo del array</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">array1</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Funciones de utilidad <strong>ARRAYS</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">rellenaAleatorioMaxMinInt</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">min</span><span class="o">,</span> <span class="kt">int</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Completa un array con valores enteros aleatorios dado un máximo y mínimo.</span>
+	<span class="nc">Random</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Random</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">max</span> <span class="o">-</span> <span class="n">min</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">min</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">borraDeArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Devuelve un array igual al enviado quitando el elemento indicado por 'pos'</span>
+	<span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="o">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    	<span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos</span><span class="o">)</span> <span class="o">{</span>
+        	<span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+		<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        	<span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">contiene</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Función que comprueba si un elemento está en el array (sin convertir en 'lista')</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">devuelve</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+			<span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">elimina1ElementoArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Utilizando las dos funciones anteriores, devuelve un array al que le hemos eliminado </span>
+    <span class="c1">// el primer elemento 'b' que encuentra, en el caso de que exista.</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">c</span><span class="o">;</span>
+	<span class="k">if</span> <span class="o">(!</span><span class="n">contiene</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">))</span>
+    <span class="o">{</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+		<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+	<span class="o">}</span>
+    <span class="k">else</span>
+	<span class="o">{</span>
+    	<span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+        <span class="o">{</span>
+			<span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">borraDeArray</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+				<span class="k">return</span> <span class="n">c</span><span class="o">;</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+    <span class="k">return</span> <span class="n">c</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">eliminaElementosArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">){</span>
+    <span class="c1">// Devuelve un array tras eliminar todos los elementos 'b' que haya en el array pasado</span>
+	<span class="kt">int</span><span class="o">[]</span> <span class="n">d</span><span class="o">;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">elimina1ElementoArray</span><span class="o">(</span><span class="n">d</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+    <span class="k">return</span> <span class="n">d</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">maxArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Devuelve el elemento mayor de un array</span>
+	<span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">max</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+    <span class="k">return</span> <span class="n">max</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">minArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// Devuelve el elemento menor de un array</span>
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    	<span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">min</span><span class="o">)</span> <span class="o">{</span>
+        	<span class="n">min</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+    <span class="k">return</span> <span class="n">min</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">imprimeArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// Presenta por pantalla un array</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"["</span><span class="o">);</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">", "</span><span class="o">);</span>
+	<span class="o">}</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">+</span> <span class="s">"]"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="arrayslist--listas">ArraysList :: Listas</h3>
+
+<p>Tipos de datos <strong>Homogéneos</strong>, <strong>dinámicos</strong>, <strong>lineales</strong></p>
+
+<blockquote>
+  <p>List es una implementacion de la clase ArrayList</p>
+</blockquote>
+
+<p>Características de los ArrayList</p>
+
+<ul>
+  <li>Un ArrayList tiene un tamaño dinámico, mientras que el de un Array es definido en su creación.</li>
+  <li>Un ArrayList no puede contener datos primitivos, sólo Objetos.</li>
+  <li>El ArrayList permite comprobar que los datos que se añaden a la colección son del tipo correcto en tiempo de compilación.</li>
+  <li>El Array puede ser de varias dimensiones, el ArrayList es unidimensional (aunque pueda ser un ArrayList de ArrayLists).</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Tipos de listas</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">li</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Double</span><span class="o">&gt;</span> <span class="n">ld</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">&gt;</span> <span class="n">lc</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Boolean</span><span class="o">&gt;</span> <span class="n">lb</span><span class="o">;</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">ls</span><span class="o">;</span>
+
+<span class="c1">// Creamos la lista</span>
+<span class="n">li</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span> <span class="c1">// más rápida para recorrer la lista (con un for)</span>
+<span class="n">li</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span> <span class="c1">// más rápida para añadir o insertar elementos</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">l2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
+
+<span class="c1">// Añadir elementos a una lista (al final)</span>
+<span class="n">li</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">115</span><span class="o">);</span>
+<span class="c1">// Añadir elemento en la posición pos</span>
+<span class="n">li</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="mi">115</span><span class="o">)</span>
+<span class="c1">// Modificar un elemento (en la posición pos)</span>
+<span class="n">li</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">pos</span><span class="o">,</span> <span class="mi">116</span><span class="o">)</span>
+<span class="c1">// Acceder a un elemento</span>
+<span class="n">li</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pos</span><span class="o">)</span>
+<span class="c1">// Acceder a su posicion</span>
+<span class="n">li</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="n">elemento</span><span class="o">)</span>
+<span class="c1">// Tamaño de la lista</span>
+<span class="n">li</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+<span class="c1">// Borrar por posición</span>
+<span class="n">li</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">pos</span><span class="o">)</span>
+<span class="c1">// Borrar por elemento</span>
+<span class="nc">Integer</span> <span class="n">ele</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="n">li</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">ele</span><span class="o">);</span>
+<span class="c1">// CONTAINS</span>
+<span class="n">li</span><span class="o">.</span><span class="na">contains</span><span class="o">();</span> <span class="c1">// igual que el de cadenas</span>
+<span class="c1">// INDEXOF</span>
+<span class="n">li</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="mi">5</span><span class="o">);</span> <span class="c1">// igual que el de cadenas</span>
+<span class="c1">// SUBLIST</span>
+<span class="n">li</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">6</span><span class="o">);</span> <span class="c1">// como SubString</span>
+<span class="c1">// Añade la lista l3 a la lista l2</span>
+<span class="n">l2</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">l3</span><span class="o">);</span>
+<span class="c1">// Añade el array arr a la lista l2</span>
+<span class="n">l2</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="nc">Array</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr</span><span class="o">));</span>
+<span class="c1">// Convertir una lista en un array</span>
+<span class="nc">Integer</span><span class="o">[]</span> <span class="n">ai2</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Integer</span><span class="o">[])</span><span class="n">li</span><span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="c1">// CLEAR</span>
+<span class="n">li</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+<span class="c1">// RESTO DE FUNCIONES CHULAS ESTÁN EN COLLECTIONS</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"min = "</span> <span class="o">+</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">l2</span><span class="o">));</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"max = "</span> <span class="o">+</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">l2</span><span class="o">));</span>
+<span class="c1">// poner la lista al revés</span>
+<span class="nc">Collections</span><span class="o">.</span><span class="na">reverse</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
+<span class="c1">// ordenar la lista</span>
+<span class="nc">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
+<span class="c1">// desordenar la lista</span>
+<span class="nc">Collections</span><span class="o">.</span><span class="na">shuffle</span><span class="o">(</span><span class="n">l2</span><span class="o">);</span>
+
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">ordenaLista</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">lista</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="nc">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">lista</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">lista</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="arrays-asociativos--maps">Arrays Asociativos :: Maps</h3>
+
+<p>Los Maps es una estructura de datos que nos permiten almacenarlos como un par de valores asociados clave=&gt;valor. También son conocidos como Diccionarios.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// declaración del Map</span>
+<span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">nameMap</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;();</span>
+
+<span class="c1">// Principales funciones</span>
+<span class="c1">// Añadir un elemento</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+<span class="c1">// Devuelve el valor de la clave 'key'. Null si la 'key' no existe</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="c1">// Devuelve el numero de elementos del Map</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+<span class="c1">// Devuelve true si no hay elementos en el Map y false si si los hay</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">();</span>
+<span class="c1">// Elimina todos los componentes del Map</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+<span class="c1">// Elimina el elemento con la clave 'key'</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="c1">// True si en nameMap hay una clave con el nombre 'key'</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="c1">// True si en nameMap hay un valor que coincide con 'value'</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+<span class="c1">// Devuelve un array con todos los valores de nameMap</span>
+<span class="n">nameMap</span><span class="o">.</span><span class="na">values</span><span class="o">();</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">leerCadena</span><span class="o">(</span><span class="nc">String</span> <span class="n">cadena</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// Esta función recibe una cadena (String) y crea un array asociativo</span>
+    <span class="c1">// con elementos formado por palabras y asociado al número de veces que </span>
+    <span class="c1">// esa palabra se encuentra en el texto</span>
+
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">palabras</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+
+	<span class="nc">String</span><span class="o">[]</span> <span class="n">arrayTexto</span> <span class="o">=</span> <span class="n">cadena</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arrayTexto</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    	<span class="k">if</span><span class="o">(</span><span class="n">cadena</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">])){</span>
+        	<span class="k">if</span><span class="o">(</span><span class="n">palabras</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span>
+            <span class="o">{</span>
+                <span class="n">palabras</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">palabras</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+			<span class="o">}</span>
+            <span class="k">else</span>
+			<span class="o">{</span>
+            	<span class="n">palabras</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">arrayTexto</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="mi">1</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">palabras</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">" -&gt; "</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="arrays-multidimensionales">Arrays multidimensionales</h3>
+
+<p>Homogéneas, estáticas, no lineales</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">escribeArrayBi</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="c1">// Presenta por pantalla un array bidimensional de manera tabulada</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">numFilas</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+	<span class="kt">int</span> <span class="n">numCols</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numFilas</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+	<span class="o">{</span>
+    	<span class="k">for</span> <span class="o">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">numCols</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
+        <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// first row</span>
+			<span class="o">{</span>
+            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"╔"</span><span class="o">);</span>
+			<span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">numFilas</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="c1">// last row</span>
+			<span class="o">{</span>
+            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"╚"</span><span class="o">);</span>
+			<span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+			<span class="o">{</span>
+            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"║"</span><span class="o">);</span>
+			<span class="o">}</span>
+            <span class="c1">// asumimos un máximo de 3 espacios para cada número</span>
+			<span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]&lt;</span><span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]&gt;</span> <span class="o">-</span><span class="mi">100</span><span class="o">)</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]&lt;</span><span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]&gt;</span> <span class="o">-</span><span class="mi">10</span><span class="o">)</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+			<span class="k">if</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]&gt;=</span><span class="mi">0</span><span class="o">)</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]);</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">numCols</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// ultima fila</span>
+			<span class="o">{</span>
+            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"╗"</span><span class="o">);</span>
+			<span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">numFilas</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">==</span> <span class="n">numCols</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// ultima fila</span>
+			<span class="o">{</span>
+            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"╝"</span><span class="o">);</span>
+			<span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">numCols</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+			<span class="o">{</span>
+            	<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"║"</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="clases-structs-en-java-no-existen">Clases, Structs (En Java no existen)</h3>
+
+<p>Tipos de datos <strong>Heterogéneas</strong>, <strong>estáticas</strong>, <strong>lineales</strong></p>
+
+<h3 id="árboles-grafos">Árboles, grafos</h3>
+
+<p>Tipos de datos <strong>Homogéneos</strong>, <strong>Dinámicos</strong>, <strong>no lineales</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Pilas y Colas</span>
+<span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">pila</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;&gt;();</span>
+<span class="n">pila</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+<span class="n">pila</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="mi">11</span><span class="o">);</span>
+<span class="n">pila</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="mi">12</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pila</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+
+<span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">cola</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+</code></pre></div></div>
+</body>
+</html>
