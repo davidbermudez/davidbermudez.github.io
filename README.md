@@ -5,3 +5,5 @@
 [Manual VSCodium](https://davidbermudez.github.io/VSCodium/)
 
 [Java](https://davidbermudez.github.io/Java/)
+
+[Ahorcado](https://davidbermudez.github.io/ahorcado/ahorcado.html)
