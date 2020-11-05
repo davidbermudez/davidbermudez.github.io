@@ -52,6 +52,7 @@
 
         #palabra {
             font-family: 'Courier New', Courier, monospace;
+            font-size: xx-large;
             text-align: center;
             padding: 10px;
         }
@@ -66,6 +67,7 @@
             text-align: center;
             font-weight: bold;
             font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(240, 231, 240);
         }
 
         #perdiste {
@@ -81,6 +83,7 @@
             font-size: small;            
             animation-duration: 2s;
             animation-timing-function: linear;
+            text-align: center;
         }
 
         @keyframes encendida {
@@ -96,6 +99,14 @@
             100% {
                 color: white;                
             }
+        }
+
+        input#letra {
+            text-align: center;
+            font-size: x-large;
+            font-weight: bold;
+            margin:10px;
+            padding: 10px;
         }
 
     </style>
@@ -122,7 +133,7 @@
             <div id="utilizadas">&nbsp;</div>
         </div>
         <div class="dibujo">
-            <img id="ahorcado" src="" width="150" height="200">
+            <img id="ahorcado" src="" width="150" height="200" style="visibility: hidden;">
         </div>
         <div class="mensajes">
             <div id="perdiste" style="visibility: hidden;">Ohhh, perdiste</div>
@@ -156,14 +167,14 @@
         }
 
         function letra() {
+            var p = document.getElementById('repetida');
+            p.style.animationName = '';
             var texto = document.getElementById("letra");
             var letraElegida = texto.value;
             if (letraElegida == "") return;
             letraElegida = letraElegida.toUpperCase();
             if (utilizadas.indexOf(letraElegida) == -1) {
-                utilizadas.push(letraElegida);
-                var p = document.getElementById('repetida');
-                p.style.animationName = '';
+                utilizadas.push(letraElegida);                
             } else {
                 // Repetida, destacar
                 destacaRep(letraElegida);
@@ -186,6 +197,7 @@
 
         function pintaErrores(a) {
             document.getElementById("ahorcado").setAttribute("src", "ahorcado" + (a) + ".png");
+            document.getElementById("ahorcado").style.visibility = "visible";
             if (a == 8) {
                 pintaFin(false);
             }
@@ -217,7 +229,7 @@
 
         function destacaRep(l) {            
             var p = document.getElementById('repetida');
-            p.style.animationName = 'encendida';
+            p.style.animationName = 'encendida';            
         }
 
         function pintaUtilizadas() {
