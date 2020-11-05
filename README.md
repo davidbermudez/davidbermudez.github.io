@@ -6,4 +6,4 @@
 
 [Java](https://davidbermudez.github.io/Java/)
 
-[Ahorcado](https://davidbermudez.github.io/ahorcado/ahorcado.html)
+[Ahorcado](https://davidbermudez.github.io/ahorcado/Ejercicio11.html)
