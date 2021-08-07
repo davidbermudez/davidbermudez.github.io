@@ -7,3 +7,5 @@
 [Java](https://davidbermudez.github.io/Java/)
 
 [Ahorcado](https://davidbermudez.github.io/ahorcado/Ejercicio11.html)
+
+[Buscaminas](https://davidbermudez.github.io/buscaminas/index.html)
