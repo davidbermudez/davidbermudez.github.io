@@ -1,6 +1,21 @@
 // deshablitar menu contextual
 document.oncontextmenu = function(){return false}
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+    apiKey: "AIzaSyDk3d_kgjLfXDZWBtKt8I76uNGO40h5LCg",
+    authDomain: "buscaminas-ea3f6.firebaseapp.com",
+    projectId: "buscaminas-ea3f6",
+    storageBucket: "buscaminas-ea3f6.appspot.com",
+    messagingSenderId: "33385946765",
+    appId: "1:33385946765:web:3e99585771f53408978cc4",
+    measurementId: "G-523RV8PLGP"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 var db = firebase.firestore();
+var base_path = 'https://davidbermudez.github.io/buscaminas/js/';
 var tiempo = 0;
 var bombas = 0;
 var celda = {fila: 0, columna: 0, valor: '0'}
@@ -20,6 +35,34 @@ var inter = setInterval(function(){
         marcadorTiempo();
     } else pauseInterval();
 },1000,"JavaScript");
+
+var imageTime = [    
+    'time0.gif','time1.gif','time2.gif',
+    'time3.gif','time4.gif','time5.gif',
+    'time6.gif','time7.gif','time8.gif',
+    'time9.gif'
+];
+
+var imageOpen = [    
+    'open0.gif','open1.gif','open2.gif',
+    'open3.gif','open4.gif','open5.gif',
+    'open6.gif','open7.gif','open8.gif'
+];
+
+preloadImage(imageTime);
+preloadImage(imageOpen);
+
+function preloadImage(data)
+{    
+    let  total = data.length;    
+    let imgArray = new Array();
+    for(let i = 0; i < total; i++)
+    {
+        var tmpImage = new Image();
+        tmpImage.src = base_path + 'images/' + data[i];
+        imgArray.push(tmpImage);
+    }
+}
 
 function dibujaTablero(nivel){
     let ancho_celda = 25;
@@ -239,8 +282,7 @@ function reiniciaTablero(n) {
         }
     }
     let celda = document.getElementById('icono');
-    celda.setAttribute('style', 'background: url("js/images/facesmile.gif") no-repeat center;\nbackground-size: contain');
-    console.log("Reinicio:", matriz);
+    celda.setAttribute('style', 'background: url("js/images/facesmile.gif") no-repeat center;\nbackground-size: contain');    
 }
 
 function clickin(event, fila, columna){    
@@ -255,8 +297,10 @@ function clickin(event, fila, columna){
                 iniciarJuego(fila, columna);
             }
             break;
-        case 2:            
-            marcar(fila, columna);
+        case 2:
+            if(estado==1){
+                marcar(fila, columna);
+            }
             break;
         default:
             alert(event);
@@ -289,8 +333,7 @@ function mostrarTabla(nivel){
         .get()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                salida = salida + '\n' + doc.data().Nick + ' => ' + doc.data().time;
-                console.log(doc.data());
+                salida = salida + '\n' + doc.data().Nick + ' => ' + doc.data().time;                
             });
             alert(salida);
         })
@@ -313,70 +356,37 @@ function finalizar(f, c) {
     pauseInterval();
     // destapar bombas    
     matriz.forEach(function(e){        
-        if(e.valor == 'B' && !(e.fila==f && e.columna==c)) {
-            console.log("SI");
+        if(e.valor == '0B' && !(e.fila==f && e.columna==c)) {            
             let casilla = document.getElementById('celda[' + e.fila + '][' + e.columna + ']');
             casilla.setAttribute('style', 'background: url("js/images/bombrevealed.gif");\nbackground-size: contain');
         }
     })
 }
 
-function destapar(f, c){
-    console.log("Destapar", f + ', ' + c);
-    valor = matriz.filter(celda => celda.fila == f && celda.columna == c);
-    console.log(valor);
-    console.log(valor[0]['valor']);
+function destapar(f, c){    
+    valor = matriz.filter(celda => celda.fila == f && celda.columna == c);    
     let celda = document.getElementById('celda[' + f + '][' + c + ']');
-    if(valor[0]['valor']=='B') {        
+    // destapamos la bomba pulsada
+    if(valor[0]['valor']=='0B') {
         celda.setAttribute('style', 'background: url("js/images/bombdeath.gif");\nbackground-size: contain');
         finalizar(f, c);
     }
-    switch(valor[0]['valor']){
-        case "1":
-            celda.setAttribute('style', 'background: url("js/images/open1.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "2":
-            celda.setAttribute('style', 'background: url("js/images/open2.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "3":
-            celda.setAttribute('style', 'background: url("js/images/open3.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "4":
-            celda.setAttribute('style', 'background: url("js/images/open4.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "5":
-            celda.setAttribute('style', 'background: url("js/images/open5.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "6":
-            celda.setAttribute('style', 'background: url("js/images/open6.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "7":
-            celda.setAttribute('style', 'background: url("js/images/open7.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "8":
-            celda.setAttribute('style', 'background: url("js/images/open8.gif");\nbackground-size: contain');
-            valor[0]['valor'] = 'd';
-            break;
-        case "0":
-            descubrir(f,c);            
-            break;
-    }
+    let val = valor[0]['valor'];
+    // Revelamos su valor
+    if(val!='00' && val!='0B'){
+        celda.setAttribute('style', 'background: url("js/images/open' + val[1] + '.gif");\nbackground-size: contain');
+        valor[0]['valor'] = 'd' + val[1];
+    } else {
+        descubrir(f,c);
+    }    
 }
 
-function descubrir(f, c) {
-    console.log("Descubre");
-    let esCero = matriz.filter(casilla => casilla.fila == f && casilla.columna == c);
-    console.log(esCero);
+function descubrir(f, c) {    
+    let esCero = matriz.filter(casilla => casilla.fila == f && casilla.columna == c);    
     let celda = document.getElementById('celda[' + f + '][' + c + ']');
-    if(esCero[0]['valor']=="0") {
-        esCero[0]['valor'] = 'b';
+    let val = esCero[0]['valor'];
+    if(val=="00") {
+        esCero[0]['valor'] = 'b0';
         celda.setAttribute('style', 'background: url("js/images/open0.gif");\nbackground-size: contain');
         if(f>0) descubrir(f - 1, c);
         if(f<niveles[nivel][0]) descubrir(f + 1, c);
@@ -387,39 +397,10 @@ function descubrir(f, c) {
         if(f<niveles[nivel][0] && c>0) descubrir(f + 1, c - 1);
         if(f<niveles[nivel][0] && c<niveles[nivel][1]) descubrir(f + 1, c + 1);
     }
-    switch(esCero[0]['valor']){
-        case "1":
-            celda.setAttribute('style', 'background: url("js/images/open1.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "2":
-            celda.setAttribute('style', 'background: url("js/images/open2.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "3":
-            celda.setAttribute('style', 'background: url("js/images/open3.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "4":
-            celda.setAttribute('style', 'background: url("js/images/open4.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "5":
-            celda.setAttribute('style', 'background: url("js/images/open5.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "6":
-            celda.setAttribute('style', 'background: url("js/images/open6.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "7":
-            celda.setAttribute('style', 'background: url("js/images/open7.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
-        case "8":
-            celda.setAttribute('style', 'background: url("js/images/open8.gif");\nbackground-size: contain');
-            esCero[0]['valor'] = 'd';
-            break;
+    let v = parseInt(val[1]);
+    if (v<=8 && v>=1){
+        celda.setAttribute('style', 'background: url("js/images/open' + v +'.gif");\nbackground-size: contain');
+        esCero[0]['valor'] = 'd' + v;
     }
 }
 
@@ -427,24 +408,23 @@ function iniciarJuego(f, c){
     // genera una matriz aleatoria de bombas evitando poner una en la casilla f, c
     for(let i = 0; i <= niveles[nivel][0]; i++){
         for(let j = 0; j <= niveles[nivel][1]; j++){
-            celda = {fila: i, columna: j, valor: '0'}
+            celda = {fila: i, columna: j, valor: '00'}
             matriz.push(celda);
         }
     }
     let b = [];
     while (b.length<niveles[nivel][2]){
         let aleatorio = Math.round(Math.random() * (matriz.length - 1));
-        while(matriz[aleatorio].valor == 'B'){
+        while(matriz[aleatorio].valor == '0B'){
             aleatorio = Math.round(Math.random() * (matriz.length - 1));
         }
         if(matriz[aleatorio].fila != f && matriz[aleatorio].columna != c){
-            matriz[aleatorio].valor = 'B';
-            b = matriz.filter(celda => celda.valor == 'B');
+            matriz[aleatorio].valor = '0B';
+            b = matriz.filter(celda => celda.valor == '0B');
         }
-    }
-    console.log("Bombas", b);
+    }    
     // una vez colocadas las bombas, colocamos los números
-    let noBombas = matriz.filter(celda => celda.valor != 'B');
+    let noBombas = matriz.filter(celda => celda.valor != '0B');
     noBombas.forEach(function(elemento){
         let fil = elemento.fila;
         let col = elemento.columna;
@@ -452,65 +432,82 @@ function iniciarJuego(f, c){
         // sumar bombas por arriba
         if(fil > 0){
             if(col > 0){
-                let arriba1 = matriz.filter(celda => celda.fila == fil - 1 && celda.columna == col - 1 && celda.valor == 'B');
+                let arriba1 = matriz.filter(celda => celda.fila == fil - 1 && celda.columna == col - 1 && celda.valor == '0B');
                 bom = bom + arriba1.length;
             }
             
-            let arriba2 = matriz.filter(celda => celda.fila == fil - 1 && celda.columna == col && celda.valor == 'B');
+            let arriba2 = matriz.filter(celda => celda.fila == fil - 1 && celda.columna == col && celda.valor == '0B');
             bom = bom + arriba2.length;
 
             if(col < niveles[nivel][1]){
-                let arriba3 = matriz.filter(celda => celda.fila == fil - 1 && celda.columna == col + 1 && celda.valor == 'B');
+                let arriba3 = matriz.filter(celda => celda.fila == fil - 1 && celda.columna == col + 1 && celda.valor == '0B');
                 bom = bom + arriba3.length;
             }
         }
         // sumar bombas laterales
         if(col > 0) {
-            let lateral1 = matriz.filter(celda => celda.fila == fil && celda.columna == col - 1 && celda.valor == 'B');
+            let lateral1 = matriz.filter(celda => celda.fila == fil && celda.columna == col - 1 && celda.valor == '0B');
             bom = bom + lateral1.length;
         }
         if(col < niveles[nivel][1]) {
-            let lateral2 = matriz.filter(celda => celda.fila == fil && celda.columna == col + 1 && celda.valor == 'B');
+            let lateral2 = matriz.filter(celda => celda.fila == fil && celda.columna == col + 1 && celda.valor == '0B');
             bom = bom + lateral2.length;
         }
         // sumar bombas por abajo
         if(fil < niveles[nivel][0]){
             if(col > 0){
-                let abajo1 = matriz.filter(celda => celda.fila == fil + 1 && celda.columna == col - 1 && celda.valor == 'B');
+                let abajo1 = matriz.filter(celda => celda.fila == fil + 1 && celda.columna == col - 1 && celda.valor == '0B');
                 bom = bom + abajo1.length;
             }
             
-            let abajo2 = matriz.filter(celda => celda.fila == (fil + 1) && celda.columna == col && celda.valor == 'B');
+            let abajo2 = matriz.filter(celda => celda.fila == (fil + 1) && celda.columna == col && celda.valor == '0B');
             bom = bom + abajo2.length;
             
             if(col < niveles[nivel][1]){
-                let abajo3 = matriz.filter(celda => celda.fila == fil + 1 && celda.columna == col + 1 && celda.valor == 'B');
+                let abajo3 = matriz.filter(celda => celda.fila == fil + 1 && celda.columna == col + 1 && celda.valor == '0B');
                 bom = bom + abajo3.length;
             }
         }
         // asignar puntuación
         pos = matriz.filter(celda => celda.fila == fil && celda.columna == col);
-        pos[0]['valor'] = bom.toString();
-        console.log("Nº Bombas alrededor de " + fil + " y " + col + ": " + bom);
-    });
-    console.log("Final:", matriz);
+        pos[0]['valor'] = '0' + bom.toString();
+    });    
     estado = 1; // En juego
     tiempo = 0;
     destapar(f, c);
     continueInterval();
+    console.log(matriz);
 }
 
-function marcar(f,c){
-    console.log("Marcar");
+function marcar(f, c){
+    console.log(matriz);
+    valor = matriz.filter(celda => celda.fila == f && celda.columna == c && (celda.valor != 'b' || celda.valor != 'd'));
+    if (valor.length > 0) {
+        valor[0]['valor'] = "M" + valor[0]['valor'];
+        let celda = document.getElementById('celda[' + f + '][' + c + ']');
+        celda.setAttribute('style', 'background: url("js/images/bombflagged.gif");\nbackground-size: contain');
+        bombas--;
+        marcadorBomba();        
+    }
 }
 
 function marcadorBomba(){
-    let dg = '000' + bombas.toString();
-    dg = dg.substr(dg.length-3, 3);
-    dg = dg.split('');                                
+    let dg = '000';
+    if (bombas>=0) {
+        dg = dg + bombas.toString();
+        dg = dg.substr(dg.length - 3, 3);
+    } else {
+        let digito = bombas.toString().length;
+        dg = '-' + dg.substr(0, 1 - digito) + Math.abs(bombas).toString();
+        dg = dg.substr(dg.length - 3, 3);
+        console.log(dg);
+    }
+    
+    dg = dg.split('');
     dg.map(function(key, index){                
         digito = document.getElementById('timer' + index);
         digito.setAttribute('style', 'background: url("js/images/time' + key + '.gif") no-repeat;\nbackground-size:contain;')
+        if (key=='') return;
     });
 }
 
